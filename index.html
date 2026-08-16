@@ -24,7 +24,6 @@
   --radius:14px;
   --shadow:0 8px 24px rgba(23,35,59,.07);
 }
-
 /* ============================ Base ============================ */
 *,*::before,*::after{box-sizing:border-box;}
 html{
@@ -44,14 +43,12 @@ a{color:var(--accent);}
 a:hover{color:var(--accent-dark);}
 :focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
 .page-main:focus{outline:none;}
-
 .skip-link{
   position:absolute;left:-9999px;top:0;z-index:2000;
   background:var(--accent);color:#fff;padding:.6rem 1.1rem;
   border-radius:0 0 10px 0;text-decoration:none;font-weight:600;
 }
 .skip-link:focus{left:0;}
-
 /* ============================ Fixed header (cover identity) ============================ */
 .site-header{
   position:fixed;top:0;left:0;right:0;z-index:1000;
@@ -94,7 +91,6 @@ a:hover{color:var(--accent-dark);}
   padding:.18rem .55rem;border-radius:999px;
   background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.2);color:#dfe8ff;
 }
-
 /* Mobile drawer toggle (hidden on desktop) */
 .nav-toggle{
   display:none;align-items:center;gap:.5rem;
@@ -104,7 +100,6 @@ a:hover{color:var(--accent-dark);}
 }
 .nav-toggle:hover{background:rgba(255,255,255,.16);}
 .nav-toggle:focus-visible{outline:2px solid #9db6ff;outline-offset:2px;}
-
 /* Action buttons - floating FAB style */
 .fab-container{
   position:fixed;right:24px;top:50%;transform:translateY(-50%);z-index:950;
@@ -153,7 +148,6 @@ a:hover{color:var(--accent-dark);}
 @media print{
   .fab-container{display:none !important;}
 }
-
 /* ============================ Fixed left navigation ============================ */
 .side-nav{
   position:fixed;top:var(--header-h);left:0;bottom:0;z-index:900;
@@ -192,12 +186,10 @@ a:hover{color:var(--accent-dark);}
 }
 .nav-sub .nav-link{font-size:.8rem;padding:.3rem .55rem;}
 .nav-sub[hidden]{display:none !important;}
-
 .backdrop{
   position:fixed;inset:0;top:var(--header-h);z-index:850;
   background:rgba(13,20,38,.45);border:0;padding:0;
 }
-
 /* ============================ Main content ============================ */
 .page-main{
   margin-left:var(--nav-w);
@@ -205,7 +197,6 @@ a:hover{color:var(--accent-dark);}
 }
 .panel,.page-footer{max-width:980px;margin-left:auto;margin-right:auto;}
 .panel{margin-bottom:2.9rem;}
-
 .panel-head{margin-bottom:1.4rem;padding-bottom:1rem;border-bottom:1px solid var(--line);}
 .panel-kicker{
   margin:0 0 .3rem;font-size:.7rem;font-weight:700;
@@ -215,14 +206,12 @@ a:hover{color:var(--accent-dark);}
 .panel-sub{margin:.35rem 0 0;font-size:1.02rem;font-weight:600;}
 .panel-lede{margin:.45rem 0 0;color:var(--muted);max-width:72ch;}
 .meta-line{margin:.55rem 0 0;font-size:.85rem;color:var(--ink-soft);}
-
 .card{
   background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
   padding:1.25rem 1.4rem;box-shadow:var(--shadow);margin-bottom:1.1rem;
 }
 .card h3{margin:0 0 .65rem;font-size:1.06rem;}
 .card p{margin:.4rem 0;}
-
 /* Overview / cover continuation */
 .overview-summary{font-size:1.08rem;max-width:75ch;color:var(--ink-soft);}
 .stat-grid{
@@ -239,7 +228,6 @@ a:hover{color:var(--accent-dark);}
   background:var(--accent-soft);border-left:4px solid var(--accent);
   border-radius:10px;padding:.85rem 1.1rem;
 }
-
 /* Lists */
 .tick-list{list-style:none;margin:.4rem 0 0;padding:0;display:flex;flex-direction:column;gap:.45rem;}
 .tick-list li{position:relative;padding-left:1.5rem;}
@@ -258,14 +246,12 @@ a:hover{color:var(--accent-dark);}
   margin:1.1rem 0 0;padding:.9rem 1.2rem;font-style:italic;color:var(--ink-soft);
   background:#f6f8ff;border-left:4px solid var(--gold);border-radius:10px;
 }
-
 /* Chips */
 .chips{list-style:none;margin:.2rem 0 0;padding:0;display:flex;flex-wrap:wrap;gap:.4rem;}
 .chips li{
   font-size:.78rem;padding:.28rem .65rem;border-radius:999px;
   background:#eef2fb;border:1px solid #d8e0f2;color:var(--ink-soft);
 }
-
 /* Capabilities */
 .cap-grid{
   display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
@@ -282,7 +268,6 @@ a:hover{color:var(--accent-dark);}
   text-transform:uppercase;letter-spacing:.06em;
 }
 .arch-layer p{margin:0;font-size:.84rem;color:var(--ink-soft);}
-
 /* Experience */
 .job-head{
   display:flex;justify-content:space-between;align-items:flex-start;
@@ -295,7 +280,6 @@ a:hover{color:var(--accent-dark);}
   background:#eef2fb;border:1px solid #d8e0f2;border-radius:999px;padding:.3rem .8rem;
 }
 .job-summary{color:var(--ink-soft);}
-
 /* Projects */
 .project-head h3{margin:0;}
 .project-sub{margin:.15rem 0 .5rem;color:var(--accent);font-weight:600;font-size:.88rem;}
@@ -303,7 +287,6 @@ a:hover{color:var(--accent-dark);}
   margin-top:.85rem;padding:.7rem 1rem;border-radius:10px;
   background:#ecf7f3;border-left:4px solid var(--accent-2);color:#14594a;
 }
-
 /* Certifications */
 .cert-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;}
 .cert{padding:.75rem 0;border-bottom:1px solid var(--line);}
@@ -319,19 +302,16 @@ a:hover{color:var(--accent-dark);}
 }
 .cert-verify:hover{color:var(--accent-dark);}
 .cert-meta{margin:.2rem 0 0;font-size:.8rem;color:var(--muted);}
-
 /* Education */
 .edu-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.75rem;}
 .edu-title{margin:0;font-weight:600;}
 .edu-meta{margin:.1rem 0 0;font-size:.84rem;color:var(--muted);}
 .headline-path{font-weight:600;color:var(--accent);}
-
 /* Footer */
 .page-footer{
   margin-top:1rem;padding-top:1.2rem;border-top:1px solid var(--line);
   color:var(--muted);font-size:.85rem;
 }
-
 /* ============================ Responsive ============================ */
 @media (max-width:1100px){
   :root{--nav-w:264px;}
@@ -364,7 +344,6 @@ a:hover{color:var(--accent-dark);}
   html{scroll-behavior:auto;}
   *,*::before,*::after{transition:none !important;animation:none !important;}
 }
-
 /* ============================ Print / PDF ============================ */
 @page{margin:12mm;}
 @media print{
@@ -393,9 +372,7 @@ a:hover{color:var(--accent-dark);}
 </style>
 </head>
 <body id="top">
-
 <a class="skip-link" href="#main">Skip to content</a>
-
 <!-- ================= Fixed header: cover identity & details ================= -->
 <header class="site-header" id="site-header">
   <div class="header-inner">
@@ -407,13 +384,11 @@ a:hover{color:var(--accent-dark);}
       </svg>
       <span>Contents</span>
     </button>
-
     <div class="header-identity">
       <p class="header-kicker">Executive Resume · Senior RPA &amp; Intelligent Automation Leader</p>
       <h1 class="header-name">Prashant Kumar Sethia</h1>
       <p class="header-role">Software Development Associate Manager — RPA</p>
     </div>
-
     <div class="header-contact">
       <ul class="contact-list">
         <li>Mumbai / Thane, Maharashtra, India</li>
@@ -432,14 +407,11 @@ a:hover{color:var(--accent-dark);}
     </div>
   </div>
 </header>
-
 <div class="backdrop" id="backdrop" hidden></div>
-
 <!-- ================= Fixed left navigation: full document outline ================= -->
 <nav class="side-nav" id="side-nav" aria-label="Resume contents">
   <p class="nav-title">Contents</p>
   <ul class="nav-root">
-
     <li class="nav-group">
       <div class="nav-head">
         <a class="nav-link nav-main" href="#overview">Overview</a>
@@ -452,7 +424,6 @@ a:hover{color:var(--accent-dark);}
         <li><a class="nav-link" href="#positioning">Positioning</a></li>
       </ul>
     </li>
-
     <li class="nav-group">
       <div class="nav-head">
         <a class="nav-link nav-main" href="#profile">01 · Executive Profile</a>
@@ -466,7 +437,6 @@ a:hover{color:var(--accent-dark);}
         <li><a class="nav-link" href="#career-evolution">Career Evolution</a></li>
       </ul>
     </li>
-
     <li class="nav-group">
       <div class="nav-head">
         <a class="nav-link nav-main" href="#capabilities">02 · Core Capabilities</a>
@@ -485,7 +455,6 @@ a:hover{color:var(--accent-dark);}
         <li><a class="nav-link" href="#architecture">Architecture Pattern</a></li>
       </ul>
     </li>
-
     <li class="nav-group">
       <div class="nav-head">
         <a class="nav-link nav-main" href="#experience">03 · Career</a>
@@ -503,7 +472,6 @@ a:hover{color:var(--accent-dark);}
         <li><a class="nav-link" href="#sriram">Sri Ram Mills</a></li>
       </ul>
     </li>
-
     <li class="nav-group">
       <div class="nav-head">
         <a class="nav-link nav-main" href="#projects">04 · Selected Projects</a>
@@ -520,7 +488,6 @@ a:hover{color:var(--accent-dark);}
         <li><a class="nav-link" href="#monitor">Monitor Bot</a></li>
       </ul>
     </li>
-
     <li class="nav-group">
       <div class="nav-head">
         <a class="nav-link nav-main" href="#certifications">05 · Certifications</a>
@@ -536,7 +503,6 @@ a:hover{color:var(--accent-dark);}
         <li><a class="nav-link" href="#cert-notes">Recognition &amp; Positioning</a></li>
       </ul>
     </li>
-
     <li class="nav-group">
       <div class="nav-head">
         <a class="nav-link nav-main" href="#education">06 · Education</a>
@@ -551,13 +517,10 @@ a:hover{color:var(--accent-dark);}
         <li><a class="nav-link" href="#headline">Career Headline</a></li>
       </ul>
     </li>
-
   </ul>
 </nav>
-
 <!-- ================= Scrollable main content ================= -->
 <main class="page-main" id="main" tabindex="-1">
-
   <!-- Cover continuation: overview -->
   <section class="panel" id="overview" aria-labelledby="overview-h">
     <header class="panel-head">
@@ -565,19 +528,15 @@ a:hover{color:var(--accent-dark);}
       <h2 id="overview-h">Senior RPA &amp; Intelligent Automation Leader</h2>
       <p class="panel-sub">Senior RPA · Intelligent Automation · Engineering</p>
     </header>
-
     <p class="overview-summary">Senior automation professional combining nearly two decades of software engineering, RPA delivery, production support, automation architecture, Python/SQL engineering, observability and enterprise process improvement.</p>
-
     <div class="stat-grid" id="snapshot" aria-label="Career snapshot">
       <div class="stat"><span class="stat-value">~20 yrs</span><span class="stat-label">Professional career</span></div>
       <div class="stat"><span class="stat-value">8+ yrs</span><span class="stat-label">RPA / automation focus</span></div>
       <div class="stat"><span class="stat-value">A360</span><span class="stat-label">Enterprise automation</span></div>
       <div class="stat"><span class="stat-value">Python + SQL</span><span class="stat-label">Engineering backbone</span></div>
     </div>
-
     <p class="positioning" id="positioning"><strong>Positioning:</strong> RPA / Intelligent Automation leader who can move from business problem and solution architecture through hands-on implementation, production engineering, observability and operational improvement.</p>
   </section>
-
   <!-- 01 · Executive Profile -->
   <section class="panel" id="profile" aria-labelledby="profile-h">
     <header class="panel-head">
@@ -586,13 +545,11 @@ a:hover{color:var(--accent-dark);}
       <p class="panel-sub">From software engineering to intelligent automation</p>
       <p class="panel-lede">A hybrid technology profile spanning application development, RPA solution delivery, automation architecture, production support and engineering-led process improvement.</p>
     </header>
-
     <article class="card" id="summary">
       <h3>Professional Summary</h3>
       <p>Senior RPA and intelligent automation professional with experience across enterprise automation, software engineering and production operations. Strong hands-on background in Automation Anywhere, Pega OpenSpan and UiPath, complemented by Python, SQL Server, PowerShell, REST APIs and Power BI. Experienced in translating operational problems into scalable automation solutions, designing bot architectures, integrating enterprise systems, improving reliability and building internal tools that reduce support effort.</p>
       <p>Recent work demonstrates an engineering-oriented approach to RPA: parallel workload distribution, OCR and document extraction, API integrations, SQL-backed state management, observability, automated incident creation, infrastructure maintenance and operational dashboards.</p>
     </article>
-
     <article class="card" id="what-i-bring">
       <h3>What I Bring</h3>
       <ul class="tick-list">
@@ -603,7 +560,6 @@ a:hover{color:var(--accent-dark);}
         <li>Experience leading/handling teams and knowledge sharing in enterprise automation environments.</li>
       </ul>
     </article>
-
     <article class="card" id="career-evolution">
       <h3>Career Evolution</h3>
       <ul class="timeline">
@@ -616,7 +572,6 @@ a:hover{color:var(--accent-dark);}
       <blockquote class="pull-quote">“A practical automation engineer who understands both the process and the technology — and can build the tooling around the automation, not just the bot itself.”</blockquote>
     </article>
   </section>
-
   <!-- 02 · Core Capabilities -->
   <section class="panel" id="capabilities" aria-labelledby="cap-h">
     <header class="panel-head">
@@ -625,7 +580,6 @@ a:hover{color:var(--accent-dark);}
       <p class="panel-sub">Technical &amp; leadership toolkit</p>
       <p class="panel-lede">Automation · APIs · Data · Observability · Production Reliability · Process Improvement</p>
     </header>
-
     <div class="cap-grid">
       <article class="card cap-card" id="cap-rpa">
         <h3>RPA &amp; Intelligent Automation</h3>
@@ -639,7 +593,6 @@ a:hover{color:var(--accent-dark);}
           <li>Bot Monitoring</li>
         </ul>
       </article>
-
       <article class="card cap-card" id="cap-engineering">
         <h3>Engineering</h3>
         <ul class="chips">
@@ -652,7 +605,6 @@ a:hover{color:var(--accent-dark);}
           <li>XML / JSON</li>
         </ul>
       </article>
-
       <article class="card cap-card" id="cap-data">
         <h3>Data &amp; Analytics</h3>
         <ul class="chips">
@@ -664,7 +616,6 @@ a:hover{color:var(--accent-dark);}
           <li>Operational Metrics</li>
         </ul>
       </article>
-
       <article class="card cap-card" id="cap-integration">
         <h3>Enterprise Integration</h3>
         <ul class="chips">
@@ -676,7 +627,6 @@ a:hover{color:var(--accent-dark);}
           <li>Web UI Automation</li>
         </ul>
       </article>
-
       <article class="card cap-card" id="cap-delivery">
         <h3>Solution Delivery</h3>
         <ul class="chips">
@@ -689,7 +639,6 @@ a:hover{color:var(--accent-dark);}
           <li>Knowledge Sharing</li>
         </ul>
       </article>
-
       <article class="card cap-card" id="cap-production">
         <h3>Production Engineering</h3>
         <ul class="chips">
@@ -701,7 +650,6 @@ a:hover{color:var(--accent-dark);}
           <li>Incident Automation</li>
         </ul>
       </article>
-
       <article class="card cap-card" id="cap-ai">
         <h3>AI-Assisted Development &amp; Agent Building</h3>
         <ul class="chips">
@@ -716,7 +664,6 @@ a:hover{color:var(--accent-dark);}
         </ul>
       </article>
     </div>
-
     <article class="card" id="architecture">
       <h3>Representative Architecture Pattern</h3>
       <p>Recent projects show a consistent architecture philosophy: use the RPA platform for orchestration and business interaction, while moving complex data, state, validation and observability into purpose-built Python/SQL components.</p>
@@ -740,7 +687,6 @@ a:hover{color:var(--accent-dark);}
       </div>
     </article>
   </section>
-
   <!-- 03 · Career -->
   <section class="panel" id="experience" aria-labelledby="exp-h">
     <header class="panel-head">
@@ -750,7 +696,6 @@ a:hover{color:var(--accent-dark);}
       <p class="panel-lede">Professional experience and responsibilities across the organizations below.</p>
       <p class="meta-line"><strong>Career span:</strong> August 2006 – Present · Nearly 20 years of professional experience</p>
     </header>
-
     <article class="card job" id="acc">
       <div class="job-head">
         <div>
@@ -766,7 +711,6 @@ a:hover{color:var(--accent-dark);}
         <li>Contribute to solution architecture, technical troubleshooting, optimization and knowledge sharing.</li>
       </ul>
     </article>
-
     <article class="card job" id="atos">
       <div class="job-head">
         <div>
@@ -782,7 +726,6 @@ a:hover{color:var(--accent-dark);}
         <li>Worked across Automation Anywhere and related automation technologies to improve process efficiency and consistency.</li>
       </ul>
     </article>
-
     <article class="card job" id="wns">
       <div class="job-head">
         <div>
@@ -799,7 +742,6 @@ a:hover{color:var(--accent-dark);}
         <li>Supported high-level automation opportunity assessments for large enterprise clients in energy and healthcare domains.</li>
       </ul>
     </article>
-
     <article class="card job" id="eclerx">
       <div class="job-head">
         <div>
@@ -815,7 +757,6 @@ a:hover{color:var(--accent-dark);}
         <li>Worked with business and technical stakeholders on application enhancement, troubleshooting and delivery.</li>
       </ul>
     </article>
-
     <article class="card job" id="prudence">
       <div class="job-head">
         <div>
@@ -831,7 +772,6 @@ a:hover{color:var(--accent-dark);}
         <li>Supported client training, deployment and database migration from Access/FoxPro to SQL.</li>
       </ul>
     </article>
-
     <article class="card job" id="intrack">
       <div class="job-head">
         <div>
@@ -846,7 +786,6 @@ a:hover{color:var(--accent-dark);}
         <li>Performed effort estimation, delivery planning and cross-team coordination.</li>
       </ul>
     </article>
-
     <article class="card job" id="sriram">
       <div class="job-head">
         <div>
@@ -862,7 +801,6 @@ a:hover{color:var(--accent-dark);}
       </ul>
     </article>
   </section>
-
   <!-- 04 · Selected Projects -->
   <section class="panel" id="projects" aria-labelledby="proj-h">
     <header class="panel-head">
@@ -872,7 +810,6 @@ a:hover{color:var(--accent-dark);}
       <p class="panel-lede">Selected recent automation projects and engineering initiatives.</p>
       <p class="meta-line"><strong>Theme:</strong> Production RPA · APIs · Python · SQL · Observability · Automation Reliability</p>
     </header>
-
     <article class="card project" id="customs">
       <header class="project-head">
         <h3>India Customs Clearance Automation</h3>
@@ -890,7 +827,6 @@ a:hover{color:var(--accent-dark);}
       </ul>
       <p class="outcome"><strong>Outcome:</strong> Improved customs clearance turnaround time and materially reduced manual effort across India operations.</p>
     </article>
-
     <article class="card project" id="china">
       <header class="project-head">
         <h3>China Dispute P23</h3>
@@ -909,7 +845,6 @@ a:hover{color:var(--accent-dark);}
       </ul>
       <p class="outcome"><strong>Outcome:</strong> Faster, more consistent dispute processing with reduced agent handling time and a complete SQL audit trail.</p>
     </article>
-
     <article class="card project" id="sud">
       <header class="project-head">
         <h3>Server Utilization Dashboard (SUD)</h3>
@@ -928,7 +863,6 @@ a:hover{color:var(--accent-dark);}
       </ul>
       <p class="outcome"><strong>Outcome:</strong> Established a scalable data foundation for bot utilization, capacity and operational decision-making.</p>
     </article>
-
     <article class="card project" id="cleanup">
       <header class="project-head">
         <h3>Auto Disk Cleanup Utility</h3>
@@ -945,7 +879,6 @@ a:hover{color:var(--accent-dark);}
       </ul>
       <p class="outcome"><strong>Outcome:</strong> Reduced disk-related production incidents by 95% and eliminated more than 80 hours of monthly manual IT effort.</p>
     </article>
-
     <article class="card project" id="qwim">
       <header class="project-head">
         <h3>QWIM — Queue Workload Item Manager</h3>
@@ -962,7 +895,6 @@ a:hover{color:var(--accent-dark);}
       </ul>
       <p class="outcome"><strong>Outcome:</strong> Replaced repetitive manual queue cleanup with faster, auditable support operations.</p>
     </article>
-
     <article class="card project" id="monitor">
       <header class="project-head">
         <h3>Monitor Bot</h3>
@@ -981,7 +913,6 @@ a:hover{color:var(--accent-dark);}
       <p class="outcome"><strong>Outcome:</strong> Automated incident creation across 30+ configured automations and transformed manual triage into a coordinated incident lifecycle.</p>
     </article>
   </section>
-
   <!-- 05 · Certifications -->
   <section class="panel" id="certifications" aria-labelledby="cert-h">
     <header class="panel-head">
@@ -990,7 +921,6 @@ a:hover{color:var(--accent-dark);}
       <p class="panel-lede">Verified sources · professional certifications spanning RPA, automation, Agile delivery and project leadership.</p>
       <p class="meta-line"><strong>Primary vendors:</strong> Automation Anywhere · Skillsoft</p>
     </header>
-
     <article class="card" id="cert-rpa">
       <h3>Automation, RPA &amp; AI Credentials</h3>
       <ul class="cert-list">
@@ -1038,7 +968,6 @@ a:hover{color:var(--accent-dark);}
         </li>
       </ul>
     </article>
-
     <article class="card" id="cert-ai">
       <h3>Skillsoft — AI, GenAI &amp; Engineering</h3>
       <ul class="cert-list">
@@ -1086,7 +1015,6 @@ a:hover{color:var(--accent-dark);}
         </li>
       </ul>
     </article>
-
     <article class="card" id="cert-agile">
       <h3>Skillsoft — Agile &amp; Project Leadership</h3>
       <ul class="cert-list">
@@ -1155,7 +1083,6 @@ a:hover{color:var(--accent-dark);}
         </li>
       </ul>
     </article>
-
     <article class="card" id="cert-cloud">
       <h3>Skillsoft — Cloud, Security &amp; Governance</h3>
       <ul class="cert-list">
@@ -1210,7 +1137,6 @@ a:hover{color:var(--accent-dark);}
         </li>
       </ul>
     </article>
-
     <article class="card" id="cert-notes">
       <h3>Additional Recognition &amp; Positioning</h3>
       <p><strong>ACE Award — Accenture (June 2026):</strong> Recipient of Accenture's prestigious ACE (Achievement, Contribution, Excellence) Award, recognizing outstanding individual performance, exceptional client value delivery, and significant contributions to the firm's success. This honor is bestowed upon consultants who demonstrate excellence in execution, innovation in problem-solving, and commitment to creating measurable business impact.</p>
@@ -1218,7 +1144,6 @@ a:hover{color:var(--accent-dark);}
       <p><strong>Certification positioning:</strong> Certifications complement hands-on experience in RPA delivery, Agile practices and enterprise automation engineering.</p>
     </article>
   </section>
-
   <!-- 06 · Education -->
   <section class="panel" id="education" aria-labelledby="edu-h">
     <header class="panel-head">
@@ -1227,7 +1152,6 @@ a:hover{color:var(--accent-dark);}
       <p class="panel-sub">Academic foundation</p>
       <p class="meta-line"><strong>Languages:</strong> Hindi · Native/Bilingual &nbsp;·&nbsp; English · Professional Working &nbsp;·&nbsp; Marathi · Elementary</p>
     </header>
-
     <article class="card" id="academic">
       <h3>Academic Foundation</h3>
       <ul class="edu-list">
@@ -1249,12 +1173,10 @@ a:hover{color:var(--accent-dark);}
         </li>
       </ul>
     </article>
-
     <article class="card" id="tech-foundation">
       <h3>Technical Foundation</h3>
       <p>Early career experience in accounting and .NET application development created a strong foundation in business processes, databases, software engineering and enterprise application delivery before the move into RPA.</p>
     </article>
-
     <article class="card" id="strengths">
       <h3>Professional Strengths</h3>
       <ul class="chips">
@@ -1266,19 +1188,16 @@ a:hover{color:var(--accent-dark);}
         <li>Knowledge sharing and mentoring</li>
       </ul>
     </article>
-
     <article class="card" id="headline">
       <h3>Career Headline</h3>
       <p class="headline-path">Software Engineer → RPA Developer → RPA Solution Architect → Senior RPA Consultant → Software Development Associate Manager</p>
       <p>This progression is the central story of the resume: a long software-engineering foundation evolving into enterprise automation architecture and engineering leadership.</p>
     </article>
   </section>
-
   <footer class="page-footer">
     <p>This HTML resume is designed for browser viewing and printing to PDF. Use the left navigation to jump between sections; internal links remain clickable in supported PDF exports.</p>
     <p><a class="back-top" href="#top">↑ Back to top</a></p>
   </footer>
-
   <!-- Floating Action Buttons (FAB) - Download PDF & Share -->
   <div class="fab-container" id="fabContainer">
     <button type="button" class="fab-main" aria-label="Actions" aria-expanded="false" aria-controls="fabPanel" title="Open actions menu">
@@ -1309,9 +1228,7 @@ a:hover{color:var(--accent-dark);}
       </button>
     </div>
   </div>
-
 </main>
-
 <noscript>
 <style>
   /* No-JS fallback: keep navigation reachable and content visible */
@@ -1321,11 +1238,9 @@ a:hover{color:var(--accent-dark);}
   .nav-toggle{display:none;}
 </style>
 </noscript>
-
 <script>
 (function () {
   'use strict';
-
   var docEl = document.documentElement;
   var header = document.getElementById('site-header');
   var nav = document.getElementById('side-nav');
@@ -1333,16 +1248,12 @@ a:hover{color:var(--accent-dark);}
   var backdrop = document.getElementById('backdrop');
   var mainEl = document.getElementById('main');
   var MOBILE_BP = 940;
-
   if (!header || !nav || !navToggle) { return; }
-
   /* Keep --header-h in sync so anchors and the nav clear the fixed header */
   function syncHeaderHeight() {
     docEl.style.setProperty('--header-h', header.offsetHeight + 'px');
   }
-
   function isMobile() { return window.innerWidth <= MOBILE_BP; }
-
   /* Collapsible outline groups (accessible buttons with aria-expanded) */
   var carets = nav.querySelectorAll('.nav-caret');
   Array.prototype.forEach.call(carets, function (btn) {
@@ -1353,7 +1264,6 @@ a:hover{color:var(--accent-dark);}
       if (sub) { sub.hidden = expanded; }
     });
   });
-
   /* Mobile drawer */
   function openNav() {
     document.body.classList.add('nav-open');
@@ -1381,7 +1291,6 @@ a:hover{color:var(--accent-dark);}
     var link = (e.target && e.target.closest) ? e.target.closest('a.nav-link') : null;
     if (link && isMobile()) { closeNav(); }
   });
-
   /* Scrollspy: highlight current outline position */
   var linkById = {};
   Array.prototype.forEach.call(nav.querySelectorAll('a[href^="#"]'), function (a) {
@@ -1392,7 +1301,6 @@ a:hover{color:var(--accent-dark);}
     var el = document.getElementById(id);
     if (el) { targets.push(el); }
   });
-
   function runSpy() {
     var limit = header.offsetHeight + 36;
     var currentId = null;
@@ -1421,7 +1329,6 @@ a:hover{color:var(--accent-dark);}
       }
     }
   }
-
   var ticking = false;
   function onScroll() {
     if (!ticking) {
@@ -1429,7 +1336,6 @@ a:hover{color:var(--accent-dark);}
       ticking = true;
     }
   }
-
   window.addEventListener('scroll', onScroll, { passive: true });
   window.addEventListener('resize', function () {
     syncHeaderHeight();
@@ -1440,7 +1346,6 @@ a:hover{color:var(--accent-dark);}
     syncHeaderHeight();
     runSpy();
   });
-
   /* Back-to-top link */
   var backTop = document.querySelector('.back-top');
   if (backTop) {
@@ -1450,11 +1355,12 @@ a:hover{color:var(--accent-dark);}
       if (mainEl && mainEl.focus) { mainEl.focus({ preventScroll: true }); }
     });
   }
-
   /* Floating Action Button - toggle panel on mobile */
   var fabContainer = document.getElementById('fabContainer');
   var fabMain = fabContainer ? fabContainer.querySelector('.fab-main') : null;
   var fabPanel = fabContainer ? fabContainer.querySelector('.fab-panel') : null;
+  var pdfBtn = document.getElementById('pdfBtn');
+  var shareBtn = document.getElementById('shareBtn');
   if (fabMain && fabPanel) {
     fabMain.addEventListener('click', function () {
       var expanded = fabMain.getAttribute('aria-expanded') === 'true';
@@ -1464,9 +1370,7 @@ a:hover{color:var(--accent-dark);}
       fabPanel.style.transform = expanded ? 'translateY(-50%) translateX(10px)' : 'translateY(-50%) translateX(0)';
     });
   }
-
   /* Download PDF button handler */
-  var pdfBtn = document.getElementById('pdfBtn');
   if (pdfBtn) {
     pdfBtn.addEventListener('click', function () {
       window.print();
@@ -1474,9 +1378,7 @@ a:hover{color:var(--accent-dark);}
       if (fabMain) fabMain.click();
     });
   }
-
   /* Share button handler - uses Web Share API with fallback */
-  var shareBtn = document.getElementById('shareBtn');
   if (shareBtn) {
     shareBtn.addEventListener('click', function () {
       var shareData = {
@@ -1484,7 +1386,6 @@ a:hover{color:var(--accent-dark);}
         text: 'Check out this executive resume of Prashant Kumar Sethia, a Senior RPA & Intelligent Automation Leader.',
         url: window.location.href
       };
-
       if (navigator.share) {
         navigator.share(shareData).catch(function (err) {
           /* User cancelled or share failed silently */
@@ -1504,7 +1405,7 @@ a:hover{color:var(--accent-dark);}
             var twitterUrl = 'https://twitter.com/intent/tweet?url=' + shareUrl;
             var linkedinUrl = 'https://www.linkedin.com/sharing/share-offsite/?url=' + shareUrl;
             var facebookUrl = 'https://www.facebook.com/sharer/sharer.php?u=' + shareUrl;
-            var msg = 'Share via:\\n\\nTwitter: ' + twitterUrl + '\\nLinkedIn: ' + linkedinUrl + '\\nFacebook: ' + facebookUrl;
+            var msg = 'Share via:\n\nTwitter: ' + twitterUrl + '\nLinkedIn: ' + linkedinUrl + '\nFacebook: ' + facebookUrl;
             alert(msg);
           });
         } else {
@@ -1513,7 +1414,7 @@ a:hover{color:var(--accent-dark);}
           var twitterUrl = 'https://twitter.com/intent/tweet?url=' + shareUrl;
           var linkedinUrl = 'https://www.linkedin.com/sharing/share-offsite/?url=' + shareUrl;
           var facebookUrl = 'https://www.facebook.com/sharer/sharer.php?u=' + shareUrl;
-          var msg = 'Copy this URL: ' + window.location.href + '\\n\\nOr share via:\\n\\nTwitter: ' + twitterUrl + '\\nLinkedIn: ' + linkedinUrl + '\\nFacebook: ' + facebookUrl;
+          var msg = 'Copy this URL: ' + window.location.href + '\n\nOr share via:\n\nTwitter: ' + twitterUrl + '\nLinkedIn: ' + linkedinUrl + '\nFacebook: ' + facebookUrl;
           alert(msg);
         }
       }
@@ -1521,11 +1422,9 @@ a:hover{color:var(--accent-dark);}
       if (fabMain) fabMain.click();
     });
   }
-
   syncHeaderHeight();
   runSpy();
 })();
 </script>
-
 </body>
 </html>
