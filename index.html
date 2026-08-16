@@ -105,23 +105,44 @@ a:hover{color:var(--accent-dark);}
 .nav-toggle:hover{background:rgba(255,255,255,.16);}
 .nav-toggle:focus-visible{outline:2px solid #9db6ff;outline-offset:2px;}
 
-/* Download PDF button - moved to footer, old header styles removed */
-
-/* Action buttons in footer */
-.action-buttons{
-  display:flex;flex-wrap:wrap;gap:.6rem;margin-top:.75rem;
+/* Action buttons - floating FAB style */
+.fab-container{
+  position:fixed;right:24px;top:50%;transform:translateY(-50%);z-index:950;
+  display:flex;flex-direction:column;gap:.5rem;
 }
-.action-btn{
-  display:flex;align-items:center;gap:.45rem;
-  background:var(--accent);color:#fff;border:0;border-radius:8px;
-  padding:.5rem .85rem;font-size:.82rem;font-weight:600;cursor:pointer;
+.fab-main{
+  width:52px;height:52px;border-radius:50%;border:0;cursor:pointer;
+  background:var(--accent);color:#fff;display:grid;place-items:center;
+  box-shadow:0 4px 16px rgba(23,35,59,.25);transition:transform .2s ease,box-shadow .2s ease;
 }
-.action-btn:hover{background:var(--accent-dark);}
-.action-btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
-.share-btn{background:var(--accent-2);}
-.share-btn:hover{background:#0a5c4d;}
+.fab-main:hover{background:var(--accent-dark);transform:scale(1.05);box-shadow:0 6px 20px rgba(23,35,59,.35);}
+.fab-main:focus-visible{outline:2px solid var(--accent);outline-offset:3px;}
+.fab-panel{
+  position:absolute;right:64px;top:50%;transform:translateY(-50%);
+  background:var(--surface);border:1px solid var(--line);border-radius:12px;
+  padding:.5rem;box-shadow:0 8px 24px rgba(23,35,59,.15);
+  opacity:0;visibility:hidden;transition:opacity .2s ease,visibility .2s ease,transform .2s ease;
+  transform:translateY(-50%) translateX(10px);
+  display:flex;flex-direction:column;gap:.35rem;min-width:140px;
+}
+.fab-container:hover .fab-panel,
+.fab-container:focus-within .fab-panel{
+  opacity:1;visibility:visible;transform:translateY(-50%) translateX(0);
+}
+.fab-container[aria-expanded="true"] .fab-panel{
+  opacity:1;visibility:visible;transform:translateY(-50%) translateX(0);
+}
+.fab-action{
+  display:flex;align-items:center;gap:.6rem;
+  background:transparent;color:var(--ink);border:0;border-radius:8px;
+  padding:.55rem .7rem;font-size:.85rem;cursor:pointer;text-align:left;
+  transition:background .15s ease;
+}
+.fab-action:hover{background:var(--accent-soft);color:var(--accent);}
+.fab-action:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+.fab-action svg{flex:none;width:18px;height:18px;}
 @media print{
-  .pdf-btn,.share-btn,.action-buttons{display:none !important;}
+  .fab-container{display:none !important;}
 }
 
 /* ============================ Fixed left navigation ============================ */
@@ -325,8 +346,9 @@ a:hover{color:var(--accent-dark);}
   .header-contact{flex-basis:100%;}
   .job-head{flex-direction:column;align-items:flex-start;}
   .card{padding:1rem 1.05rem;}
-  .action-buttons{justify-content:center;}
-  .action-btn{flex:1 1 auto;min-width:140px;justify-content:center;}
+  .fab-container{right:16px;}
+  .fab-main{width:48px;height:48px;}
+  .fab-panel{min-width:120px;}
 }
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto;}
@@ -1244,20 +1266,30 @@ a:hover{color:var(--accent-dark);}
   <footer class="page-footer">
     <p>This HTML resume is designed for browser viewing and printing to PDF. Use the left navigation to jump between sections; internal links remain clickable in supported PDF exports.</p>
     <p><a class="back-top" href="#top">↑ Back to top</a></p>
-    
-    <!-- Action buttons: Download PDF and Share -->
-    <div class="action-buttons">
-      <button type="button" id="pdfBtn" class="action-btn pdf-btn" title="Download this resume as PDF" aria-label="Download this resume as PDF">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+  </footer>
+
+  <!-- Floating Action Buttons (FAB) - Download PDF & Share -->
+  <div class="fab-container" id="fabContainer">
+    <button type="button" class="fab-main" aria-label="Actions" aria-expanded="false" aria-controls="fabPanel" title="Open actions menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+        <circle cx="18" cy="5" r="3"></circle>
+        <circle cx="6" cy="12" r="3"></circle>
+        <circle cx="18" cy="19" r="3"></circle>
+        <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+        <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+      </svg>
+    </button>
+    <div class="fab-panel" id="fabPanel" role="menu">
+      <button type="button" id="pdfBtn" class="fab-action" role="menuitem" title="Download this resume as PDF" aria-label="Download this resume as PDF">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
           <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
           <polyline points="7 10 12 15 17 10"></polyline>
           <line x1="12" y1="15" x2="12" y2="3"></line>
         </svg>
         <span>Download PDF</span>
       </button>
-      
-      <button type="button" id="shareBtn" class="action-btn share-btn" title="Share this resume" aria-label="Share this resume on social media">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+      <button type="button" id="shareBtn" class="fab-action" role="menuitem" title="Share this resume" aria-label="Share this resume on social media">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
           <circle cx="18" cy="5" r="3"></circle>
           <circle cx="6" cy="12" r="3"></circle>
           <circle cx="18" cy="19" r="3"></circle>
@@ -1267,7 +1299,7 @@ a:hover{color:var(--accent-dark);}
         <span>Share</span>
       </button>
     </div>
-  </footer>
+  </div>
 
 </main>
 
@@ -1355,9 +1387,9 @@ a:hover{color:var(--accent-dark);}
   function runSpy() {
     var limit = header.offsetHeight + 36;
     var currentId = null;
-    for (var i = 0; i < targets.length; i++) {
-      if (targets[i].getBoundingClientRect().top <= limit) { currentId = targets[i].id; }
-      else { break; }
+    for (var i = targets.length - 1; i >= 0; i--) {
+      var rect = targets[i].getBoundingClientRect();
+      if (rect.top <= limit) { currentId = targets[i].id; break; }
     }
     if (!currentId && targets.length) { currentId = targets[0].id; }
     Object.keys(linkById).forEach(function (id) {
@@ -1401,11 +1433,27 @@ a:hover{color:var(--accent-dark);}
     });
   }
 
+  /* Floating Action Button - toggle panel on mobile */
+  var fabContainer = document.getElementById('fabContainer');
+  var fabMain = fabContainer ? fabContainer.querySelector('.fab-main') : null;
+  var fabPanel = fabContainer ? fabContainer.querySelector('.fab-panel') : null;
+  if (fabMain && fabPanel) {
+    fabMain.addEventListener('click', function () {
+      var expanded = fabMain.getAttribute('aria-expanded') === 'true';
+      fabMain.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+      fabPanel.style.opacity = expanded ? '0' : '1';
+      fabPanel.style.visibility = expanded ? 'hidden' : 'visible';
+      fabPanel.style.transform = expanded ? 'translateY(-50%) translateX(10px)' : 'translateY(-50%) translateX(0)';
+    });
+  }
+
   /* Download PDF button handler */
   var pdfBtn = document.getElementById('pdfBtn');
   if (pdfBtn) {
     pdfBtn.addEventListener('click', function () {
       window.print();
+      /* Close FAB panel after action */
+      if (fabMain) fabMain.click();
     });
   }
 
@@ -1451,6 +1499,8 @@ a:hover{color:var(--accent-dark);}
           alert(msg);
         }
       }
+      /* Close FAB panel after action */
+      if (fabMain) fabMain.click();
     });
   }
 
