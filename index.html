@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prashant Kumar Sethia — Senior RPA & Intelligent Automation Leader</title>
+<style>
+  :root{
+    --ink:#18232f;
+    --muted:#607080;
+    --line:#dce3e9;
+    --paper:#ffffff;
+    --bg:#edf2f5;
+    --accent:#0b7285;
+    --accent2:#164e63;
+    --soft:#eef8fa;
+    --dark:#10232f;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;background:var(--bg);color:var(--ink);
+    font-family:Inter,Segoe UI,Arial,sans-serif;line-height:1.55;
+  }
+  a{color:inherit;text-decoration:none}
+  .page{
+    width:1120px;min-height:790px;margin:26px auto;background:var(--paper);
+    box-shadow:0 8px 30px rgba(16,35,47,.10);display:grid;grid-template-columns:245px 1fr;
+    overflow:hidden;page-break-after:always;
+  }
+  .side{
+    background:var(--dark);color:#dce8ee;padding:30px 22px;position:relative;
+  }
+  .side .brand{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#8dd3df;font-weight:700}
+  .side h2{font-size:23px;line-height:1.15;color:white;margin:10px 0 22px}
+  .side .nav-title{font-size:10px;text-transform:uppercase;letter-spacing:1.7px;color:#8fa8b5;margin:26px 0 8px}
+  .side nav a{display:block;font-size:12px;padding:7px 9px;border-left:2px solid transparent;color:#d5e3e9}
+  .side nav a:hover{border-left-color:#65c6d3;background:rgba(255,255,255,.06);color:white}
+  .side .contact{font-size:11px;color:#b9cbd4;word-break:break-word}
+  .side .tag{display:inline-block;border:1px solid #496575;border-radius:20px;padding:4px 8px;margin:3px 2px;font-size:10px;color:#d9e8ee}
+  .side .footer{position:absolute;bottom:20px;left:22px;right:22px;font-size:9px;color:#78909d}
+  .main{padding:38px 44px 48px}
+  .eyebrow{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);font-weight:800}
+  h1{font-size:42px;line-height:1.05;margin:8px 0 6px;letter-spacing:-1px}
+  h2.section{font-size:25px;margin:0 0 16px;color:var(--dark);letter-spacing:-.3px}
+  h3{font-size:17px;margin:0 0 4px}
+  h4{font-size:13px;margin:14px 0 5px;color:var(--accent2)}
+  p{margin:7px 0}
+  .lead{font-size:16px;color:#425563;max-width:760px}
+  .sub{color:var(--muted);font-size:12px}
+  .rule{height:1px;background:var(--line);margin:24px 0}
+  .hero{
+    min-height:790px;display:flex;flex-direction:column;justify-content:center;
+    position:relative;overflow:hidden;
+  }
+  .hero:before{
+    content:"";position:absolute;width:500px;height:500px;border-radius:50%;
+    right:-210px;top:-180px;background:#dff4f6;
+  }
+  .hero:after{
+    content:"";position:absolute;width:260px;height:260px;border-radius:50%;
+    left:-150px;bottom:-110px;background:#e8eef2;
+  }
+  .hero-content{position:relative;z-index:2}
+  .hero h1{font-size:58px;max-width:720px}
+  .hero .role{font-size:22px;color:var(--accent2);font-weight:700;margin:8px 0 22px}
+  .metrics{display:flex;gap:12px;flex-wrap:wrap;margin:28px 0}
+  .metric{border:1px solid var(--line);padding:13px 15px;border-radius:10px;min-width:145px;background:#fff}
+  .metric strong{display:block;font-size:21px;color:var(--dark)}
+  .metric span{font-size:10px;text-transform:uppercase;letter-spacing:1px;color:var(--muted)}
+  .cover-note{font-size:12px;color:var(--muted);max-width:650px}
+  .section-intro{font-size:14px;color:#465967;margin-bottom:18px}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .card{border:1px solid var(--line);border-radius:10px;padding:16px;background:#fff}
+  .card.soft{background:var(--soft);border-color:#cfe9ed}
+  .pill{display:inline-block;background:var(--soft);color:#0b5968;border-radius:18px;padding:5px 9px;margin:3px 3px 3px 0;font-size:10px;font-weight:700}
+  ul{margin:8px 0 0;padding-left:19px}
+  li{margin:5px 0;font-size:12.5px}
+  .timeline{border-left:2px solid #c9d9df;margin-left:7px;padding-left:22px}
+  .job{position:relative;margin-bottom:25px}
+  .job:before{
+    content:"";position:absolute;left:-30px;top:5px;width:12px;height:12px;border-radius:50%;
+    background:var(--accent);box-shadow:0 0 0 4px #e4f3f5;
+  }
+  .job-head{display:flex;justify-content:space-between;gap:18px;align-items:flex-start}
+  .job-date{font-size:11px;color:var(--accent);font-weight:800;white-space:nowrap}
+  .company{font-size:14px;color:var(--muted);font-weight:600}
+  .role-desc{font-size:12.5px;color:#4d606d;margin:7px 0}
+  .project{
+    border:1px solid var(--line);border-radius:10px;margin:12px 0;padding:15px 17px;
+    page-break-inside:avoid;
+  }
+  .project h3{color:var(--dark)}
+  .project .stack{margin-top:8px}
+  .project .impact{
+    margin-top:9px;padding:9px 11px;border-left:3px solid var(--accent);
+    background:#f3f9fa;font-size:12px;color:#31505c;
+  }
+  .cert{padding:11px 0;border-bottom:1px solid var(--line)}
+  .cert:last-child{border-bottom:0}
+  .cert strong{font-size:12.5px}
+  .cert span{display:block;font-size:11px;color:var(--muted)}
+  .education{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .edu{border:1px solid var(--line);border-radius:9px;padding:12px}
+  .edu strong{font-size:12px}
+  .edu span{display:block;color:var(--muted);font-size:10.5px}
+  .quote{border-left:4px solid var(--accent);padding:8px 14px;background:#f4f8fa;color:#465966;font-size:12px;margin:12px 0}
+  .small{font-size:10px;color:var(--muted)}
+  .back{float:right;font-size:10px;color:var(--accent);font-weight:700}
+  .print-note{font-size:10px;color:var(--muted);margin-top:22px}
+  @media print{
+    body{background:white}
+    .page{width:100%;margin:0;box-shadow:none}
+    a{color:inherit}
+  }
+  @media(max-width:900px){
+    .page{width:100%;margin:0;grid-template-columns:190px 1fr}
+    .main{padding:28px}
+    .hero h1{font-size:44px}
+  }
+  @media(max-width:680px){
+    .page{display:block}
+    .side{position:relative;min-height:auto}
+    .side .footer{position:static;margin-top:20px}
+    .grid2,.education{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<section class="page" id="cover">
+  <aside class="side">
+    <div class="brand">Executive Resume</div>
+    <h2>Prashant<br>Kumar Sethia</h2>
+    <div class="nav-title">Navigate</div>
+    <nav>
+      <a href="#profile">01 · Executive Profile</a>
+      <a href="#capabilities">02 · Core Capabilities</a>
+      <a href="#experience">03 · Career</a>
+      <a href="#projects">04 · Selected Projects</a>
+      <a href="#certifications">05 · Certifications</a>
+      <a href="#education">06 · Education</a>
+    </nav>
+    <div class="nav-title">Contact</div>
+    <div class="contact">Mumbai / Thane, Maharashtra<br>India<br><br>sethia.prashant@gmail.com<br>+91 9320213421<br><br><a href="https://www.linkedin.com/in/prashantksethia" target="_blank">linkedin.com/in/prashantksethia</a></div>
+    <div class="nav-title">Focus</div>
+    <span class="tag">RPA</span><span class="tag">Automation</span><span class="tag">Python</span><span class="tag">SQL Server</span><span class="tag">A360</span><span class="tag">Power BI</span><span class="tag">AI / GenAI</span>
+    
+  </aside>
+  <main class="main hero">
+    <div class="hero-content">
+      <div class="eyebrow">Senior RPA · Intelligent Automation · Engineering</div>
+      <h1>Prashant Kumar<br>Sethia</h1>
+      <div class="role">Software Development Associate Manager — RPA</div>
+      <p class="lead">Senior automation professional combining nearly two decades of software engineering, RPA delivery, production support, automation architecture, Python/SQL engineering, observability and enterprise process improvement.</p>
+      <div class="metrics">
+        <div class="metric"><strong>~20 yrs</strong><span>Professional career</span></div>
+        <div class="metric"><strong>8+ yrs</strong><span>RPA / automation focus</span></div>
+        <div class="metric"><strong>A360</strong><span>Enterprise automation</span></div>
+        <div class="metric"><strong>Python + SQL</strong><span>Engineering backbone</span></div>
+      </div>
+      <p class="cover-note"><b>Positioning:</b> RPA / Intelligent Automation leader who can move from business problem and solution architecture through hands-on implementation, production engineering, observability and operational improvement.</p>
+    </div>
+  </main>
+</section>
+
+<!-- PROFILE -->
+<section class="page" id="profile">
+  <aside class="side">
+    <div class="brand">01 · Profile</div>
+    <h2>Executive<br>Profile</h2>
+    <div class="nav-title">On this page</div>
+    <nav>
+      <a href="#profile">Executive Profile</a>
+      <a href="#capabilities">Core Capabilities</a>
+      <a href="#experience">Career</a>
+      <a href="#projects">Projects</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#education">Education</a>
+    </nav>
+    <div class="nav-title">Contact</div>
+    <div class="contact">Mumbai / Thane, Maharashtra<br>India<br><br><a href="mailto:sethia.prashant@gmail.com">sethia.prashant@gmail.com</a><br>+91 9320213421</div>
+    <div class="footer"><a href="#cover">↑ Back to cover</a></div>
+  </aside>
+  <main class="main">
+    <div class="eyebrow">01 · Executive Profile</div>
+    <h2 class="section">From software engineering to intelligent automation</h2>
+    <p class="section-intro">A hybrid technology profile spanning application development, RPA solution delivery, automation architecture, production support and engineering-led process improvement.</p>
+
+    <div class="card soft">
+      <h3>Professional Summary</h3>
+      <p>Senior RPA and intelligent automation professional with experience across enterprise automation, software engineering and production operations. Strong hands-on background in Automation Anywhere, Pega OpenSpan and UiPath, complemented by Python, SQL Server, PowerShell, REST APIs and Power BI. Experienced in translating operational problems into scalable automation solutions, designing bot architectures, integrating enterprise systems, improving reliability and building internal tools that reduce support effort.</p>
+      <p>Recent work demonstrates an engineering-oriented approach to RPA: parallel workload distribution, OCR and document extraction, API integrations, SQL-backed state management, observability, automated incident creation, infrastructure maintenance and operational dashboards.</p>
+    </div>
+
+    <div class="rule"></div>
+    <div class="grid2">
+      <div class="card">
+        <h3>What I Bring</h3>
+        <ul>
+          <li>End-to-end RPA solution ownership from discovery and process assessment through deployment and support.</li>
+          <li>Hands-on engineering across Python, SQL Server, PowerShell, C# and REST APIs.</li>
+          <li>Production-grade thinking: fault tolerance, auditability, configuration externalization and recoverability.</li>
+          <li>Ability to bridge business analysis, solution architecture and implementation.</li>
+          <li>Experience leading/handling teams and knowledge sharing in enterprise automation environments.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Career Evolution</h3>
+        <ul>
+          <li><b>2006–2010:</b> Finance/accounting and early software development.</li>
+          <li><b>2010–2018:</b> .NET application engineering plus first RPA implementations.</li>
+          <li><b>2018–2021:</b> RPA solution architecture and automation delivery at WNS.</li>
+          <li><b>2021–2024:</b> Senior RPA consulting and lifecycle ownership at Atos Syntel.</li>
+          <li><b>2024–Present:</b> Associate Manager / senior RPA engineering at Accenture.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="quote">“A practical automation engineer who understands both the process and the technology — and can build the tooling around the automation, not just the bot itself.”</div>
+    <a class="back" href="#cover">Back to cover ↑</a>
+  </main>
+</section>
+
+<!-- CAPABILITIES -->
+<section class="page" id="capabilities">
+  <aside class="side">
+    <div class="brand">02 · Capabilities</div>
+    <h2>Core<br>Capabilities</h2>
+    <div class="nav-title">Navigate</div>
+    <nav>
+      <a href="#profile">01 · Profile</a>
+      <a href="#capabilities">02 · Capabilities</a>
+      <a href="#experience">03 · Career</a>
+      <a href="#projects">04 · Projects</a>
+      <a href="#certifications">05 · Certifications</a>
+      <a href="#education">06 · Education</a>
+    </nav>
+    <div class="nav-title">Technical Themes</div>
+    <div class="contact">Automation · APIs · Data · Observability · Production Reliability · Process Improvement</div>
+    <div class="footer"><a href="#cover">↑ Back to cover</a></div>
+  </aside>
+  <main class="main">
+    <div class="eyebrow">02 · Core Capabilities</div>
+    <h2 class="section">Technical & leadership toolkit</h2>
+    <div class="grid2">
+      <div class="card">
+        <h3>RPA & Intelligent Automation</h3>
+        <span class="pill">Automation Anywhere A360</span><span class="pill">Automation Anywhere Enterprise</span><span class="pill">Pega OpenSpan</span><span class="pill">UiPath</span><span class="pill">IDP / OCR</span><span class="pill">Queue Automation</span><span class="pill">Bot Monitoring</span>
+      </div>
+      <div class="card">
+        <h3>Engineering</h3>
+        <span class="pill">Python</span><span class="pill">C#</span><span class="pill">PowerShell</span><span class="pill">ASP.NET</span><span class="pill">JavaScript</span><span class="pill">REST APIs</span><span class="pill">XML / JSON</span>
+      </div>
+      <div class="card">
+        <h3>Data & Analytics</h3>
+        <span class="pill">SQL Server</span><span class="pill">Stored Procedures</span><span class="pill">Data Modeling</span><span class="pill">Kimball Star Schema</span><span class="pill">Power BI</span><span class="pill">Operational Metrics</span>
+      </div>
+      <div class="card">
+        <h3>Enterprise Integration</h3>
+        <span class="pill">Salesforce</span><span class="pill">ServiceNow</span><span class="pill">Kofax OCR</span><span class="pill">PAM / Vault</span><span class="pill">Government Portals</span><span class="pill">Web UI Automation</span>
+      </div>
+      <div class="card">
+        <h3>Solution Delivery</h3>
+        <span class="pill">Process Discovery</span><span class="pill">As-Is / To-Be</span><span class="pill">Scoping</span><span class="pill">Solution Design</span><span class="pill">Implementation</span><span class="pill">Change Management</span><span class="pill">Knowledge Sharing</span>
+      </div>
+      <div class="card">
+        <h3>Production Engineering</h3>
+        <span class="pill">Fault Tolerance</span><span class="pill">Audit Trails</span><span class="pill">Configuration Driven</span><span class="pill">Parallel Processing</span><span class="pill">Self-Healing</span><span class="pill">Incident Automation</span>
+      </div>
+      <div class="card">
+        <h3>AI-Assisted Development &amp; Agent Building</h3>
+        <span class="pill">VS Code</span><span class="pill">GitHub Copilot</span><span class="pill">Codex</span><span class="pill">Lovable</span><span class="pill">Vibe Coding</span><span class="pill">n8n AI Agents</span><span class="pill">Agent Workflows</span><span class="pill">Generative AI</span>
+      </div>
+    </div>
+    <div class="rule"></div>
+    <h3>Representative Architecture Pattern</h3>
+    <p class="section-intro">Recent projects show a consistent architecture philosophy: use the RPA platform for orchestration and business interaction, while moving complex data, state, validation and observability into purpose-built Python/SQL components.</p>
+    <div class="grid2">
+      <div class="card soft"><h4>Orchestration</h4><p class="small">A360 Control Room · WLM · bot runners · schedules · queues</p></div>
+      <div class="card soft"><h4>Engineering Layer</h4><p class="small">Python · REST APIs · C# CLR · PowerShell · configuration</p></div>
+      <div class="card soft"><h4>Data Layer</h4><p class="small">SQL Server · manifests · dimensions/facts · audit logs · high-water marks</p></div>
+      <div class="card soft"><h4>Visibility</h4><p class="small">Power BI · HTML reports · email alerts · ServiceNow incidents</p></div>
+    </div>
+    <a class="back" href="#cover">Back to cover ↑</a>
+  </main>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="page" id="experience">
+  <aside class="side">
+    <div class="brand">03 · Career</div>
+    <h2>Professional<br>Experience</h2>
+    <div class="nav-title">Companies</div>
+    <nav>
+      <a href="#acc">Accenture</a>
+      <a href="#atos">Atos Syntel</a>
+      <a href="#wns">WNS Global Services</a>
+      <a href="#eclerx">eClerx</a>
+      <a href="#prudence">Prudence TechSol</a>
+      <a href="#intrack">Intrack</a>
+      <a href="#sriram">Sri Ram Mills</a>
+    </nav>
+    <div class="nav-title">Career span</div>
+    <div class="contact">August 2006 – Present<br>Nearly 20 years of professional experience</div>
+    <div class="footer"><a href="#cover">↑ Back to cover</a></div>
+  </aside>
+  <main class="main">
+    <div class="eyebrow">03 · Professional Experience</div>
+    <h2 class="section">Career journey</h2>
+    <p class="section-intro">Professional experience and responsibilities across the organizations below.</p>
+    <div class="timeline">
+
+      <article class="job" id="acc">
+        <div class="job-head"><div><h3>Accenture</h3><div class="company">Software Development Associate Manager — RPA</div></div><div class="job-date">Aug 2024 – Present</div></div>
+        <p class="role-desc">Leads and contributes to enterprise RPA engineering and delivery, with focus on solution design, production-grade automation, intelligent document processing, integrations and operational improvements. Works across business requirements, architecture, development, deployment and support.</p>
+        <ul>
+          <li>Design and develop advanced RPA solutions using Automation Anywhere A360 and complementary Python, SQL and API components.</li>
+          <li>Drive automation reliability through centralized state management, monitoring, auditability and operational tooling.</li>
+          <li>Contribute to solution architecture, technical troubleshooting, optimization and knowledge sharing.</li>
+        </ul>
+      </article>
+
+      <article class="job" id="atos">
+        <div class="job-head"><div><h3>Atos Syntel</h3><div class="company">Senior Consultant — RPA</div></div><div class="job-date">Jun 2021 – Jul 2024</div></div>
+        <p class="role-desc">Owned RPA solution lifecycle activities including requirement gathering, process analysis, solution design, development, optimization, deployment and stakeholder management. Worked on intelligent automation initiatives across enterprise processes.</p>
+        <ul>
+          <li>Translated business processes into scalable RPA designs and implementation plans.</li>
+          <li>Reviewed automation solutions, supported production issues and shared implementation knowledge with team members.</li>
+          <li>Worked across Automation Anywhere and related automation technologies to improve process efficiency and consistency.</li>
+        </ul>
+      </article>
+
+      <article class="job" id="wns">
+        <div class="job-head"><div><h3>WNS Global Services</h3><div class="company">Deputy Manager — IT / RPA Solution Architect</div></div><div class="job-date">Oct 2018 – May 2021</div></div>
+        <p class="role-desc">Worked as an RPA Solution Architect and automation delivery lead, primarily using Automation Anywhere and UiPath. Supported automation programs across finance and customer operations, including scoping, implementation and team enablement.</p>
+        <ul>
+          <li>Handled core development activities for an internal finance department and supported end-to-end RPA implementation.</li>
+          <li>Finalized automation scope with SMEs/BAs, reviewed As-Is processes and prepared implementation plans.</li>
+          <li>Delivered automations across accounts receivable, accounts payable, payroll, customer master, invoicing and reconciliation processes.</li>
+          <li>Supported high-level automation opportunity assessments for large enterprise clients in energy and healthcare domains.</li>
+        </ul>
+      </article>
+
+      <article class="job" id="eclerx">
+        <div class="job-head"><div><h3>eClerx Services</h3><div class="company">Associate Process Manager</div></div><div class="job-date">Sep 2011 – Sep 2018</div></div>
+        <p class="role-desc">Combined software engineering, application maintenance and process-management responsibilities, with increasing involvement in RPA. Developed and maintained ASP.NET/Windows applications and implemented RPA solutions using Pega OpenSpan and Automation Anywhere.</p>
+        <ul>
+          <li>Developed and maintained .NET applications backed by SQL Server.</li>
+          <li>Implemented RPA solutions and contributed to the internally developed Roboworx RPA initiative.</li>
+          <li>Worked with business and technical stakeholders on application enhancement, troubleshooting and delivery.</li>
+        </ul>
+      </article>
+
+      <article class="job" id="prudence">
+        <div class="job-head"><div><h3>Prudence TechSol Pvt. Ltd.</h3><div class="company">Software Engineer / Senior Software Developer</div></div><div class="job-date">Sep 2010 – Sep 2011</div></div>
+        <p class="role-desc">Handled client requirements, application design, database development and deployment activities for enterprise business applications built on ASP.NET and related Microsoft technologies.</p>
+        <ul>
+          <li>Gathered requirements, created flow diagrams and techno-functional design documentation.</li>
+          <li>Designed database structures, ASP.NET pages, business objects and database scripts.</li>
+          <li>Supported client training, deployment and database migration from Access/FoxPro to SQL.</li>
+        </ul>
+      </article>
+
+      <article class="job" id="intrack">
+        <div class="job-head"><div><h3>Intrack Inc.</h3><div class="company">Software Developer</div></div><div class="job-date">Sep 2008 – Jun 2010</div></div>
+        <p class="role-desc">Developed multi-tier web applications using ASP.NET and C#, working with SQL Server 2000/2005 and coordinating delivery activities with QA and system teams.</p>
+        <ul>
+          <li>Developed and supported web-based business applications.</li>
+          <li>Performed effort estimation, delivery planning and cross-team coordination.</li>
+        </ul>
+      </article>
+
+      <article class="job" id="sriram">
+        <div class="job-head"><div><h3>Sri Ram Mills, Mumbai</h3><div class="company">Senior Accountant</div></div><div class="job-date">Aug 2006 – Jul 2008</div></div>
+        <p class="role-desc">Managed core accounting operations and supported business applications used for financial and portfolio-related activities.</p>
+        <ul>
+          <li>Handled voucher auditing, bank reconciliation, cash book management and TDS/taxation activities.</li>
+          <li>Supported Tally and portfolio applications and maintained financial records.</li>
+        </ul>
+      </article>
+    </div>
+    <a class="back" href="#cover">Back to cover ↑</a>
+  </main>
+</section>
+
+<!-- PROJECTS -->
+<section class="page" id="projects">
+  <aside class="side">
+    <div class="brand">04 · Portfolio</div>
+    <h2>Selected<br>Projects</h2>
+    <div class="nav-title">Recent work</div>
+    <nav>
+      <a href="#customs">Customs Clearance</a>
+      <a href="#china">China Dispute P23</a>
+      <a href="#sud">Server Utilization Dashboard</a>
+      <a href="#cleanup">Auto Disk Cleanup</a>
+      <a href="#qwim">QWIM</a>
+      <a href="#monitor">Monitor Bot</a>
+    </nav>
+    <div class="nav-title">Theme</div>
+    <div class="contact">Production RPA · APIs · Python · SQL · Observability · Automation Reliability</div>
+    <div class="footer"><a href="#cover">↑ Back to cover</a></div>
+  </aside>
+  <main class="main">
+    <div class="eyebrow">04 · Selected Project Portfolio</div>
+    <h2 class="section">Recent engineering-led automation work</h2>
+    <p class="section-intro">Selected recent automation projects and engineering initiatives.</p>
+
+    <article class="project" id="customs">
+      <h3>India Customs Clearance Automation <span class="small">· RPA / IDP / API Integration</span></h3>
+      <p>Production-grade automation for customs declaration entry for inbound air shipments across India gateways. Built on Automation Anywhere A360 with Python-driven workload loading and distribution across four parallel bot runners.</p>
+      <div class="stack"><span class="pill">A360</span><span class="pill">Python</span><span class="pill">WLM</span><span class="pill">Kofax OCR</span><span class="pill">SQL Server</span><span class="pill">REST API</span><span class="pill">Fuzzy Matching</span></div>
+      <ul>
+        <li>Implemented batch workload distribution and parallel processing across four bot runners.</li>
+        <li>Integrated Kofax OCR for invoice extraction and custom SQL logic for fuzzy customer-profile validation.</li>
+        <li>Automated government ACCS portal submission through REST APIs and tracked processing in a centralized SQL manifest.</li>
+        <li>Added daily reporting and cloud-based log archival for auditability.</li>
+      </ul>
+      <div class="impact"><b>Outcome:</b> Improved customs clearance turnaround time and materially reduced manual effort across India operations.</div>
+    </article>
+
+    <article class="project" id="china">
+      <h3>China Dispute P23 <span class="small">· RPA / Salesforce / Revenue Data</span></h3>
+      <p>End-to-end automation of China customer billing dispute triage and case management, integrating Automation Anywhere with Salesforce FCM, an internal revenue-analysis application and a revenue data API.</p>
+      <div class="stack"><span class="pill">Automation Anywhere</span><span class="pill">Salesforce FCM</span><span class="pill">Python</span><span class="pill">XML Parsing</span><span class="pill">SQL</span><span class="pill">PAM</span></div>
+      <ul>
+        <li>Processed Mandarin-language dispute emails and extracted shipment tracking information.</li>
+        <li>Retrieved billing data using authenticated web UI automation and Python-driven XML parsing.</li>
+        <li>Updated Salesforce cases with enriched data, attachments and queue routing.</li>
+        <li>Used a concurrency-safe SQL claiming pattern to support multiple bot instances in parallel.</li>
+        <li>Externalized XPath selectors, queue mappings and URLs so operational changes did not require code redeployment.</li>
+      </ul>
+      <div class="impact"><b>Outcome:</b> Faster, more consistent dispute processing with reduced agent handling time and a complete SQL audit trail.</div>
+    </article>
+
+    <article class="project" id="sud">
+      <h3>Server Utilization Dashboard (SUD) <span class="small">· RPA Observability / Analytics</span></h3>
+      <p>End-to-end observability platform that ingests Automation Anywhere A360 Control Room activity and converts high-volume execution history into utilization, capacity and team-attribution metrics.</p>
+      <div class="stack"><span class="pill">A360 REST API</span><span class="pill">Python</span><span class="pill">SQL Server</span><span class="pill">Power BI</span><span class="pill">Star Schema</span></div>
+      <ul>
+        <li>Processes roughly 90,000 activity records per day using paginated ingestion.</li>
+        <li>Designed a Kimball-style star schema for utilization and attribution reporting across 200+ servers and 300+ runner accounts.</li>
+        <li>Implemented token auto-refresh, multi-day activity splitting and SQL-based incremental loading.</li>
+        <li>Created idempotent dimension procedures and a high-water-mark mechanism to recover from partial failures.</li>
+        <li>Delivered both an immediate CSV pipeline and a production database-backed incremental loader using the same Power BI semantic model.</li>
+      </ul>
+      <div class="impact"><b>Outcome:</b> Established a scalable data foundation for bot utilization, capacity and operational decision-making.</div>
+    </article>
+
+    <article class="project" id="cleanup">
+      <h3>Auto Disk Cleanup Utility <span class="small">· Infrastructure Automation</span></h3>
+      <p>Automated disk-space management platform designed to prevent RPA bot failures caused by disk exhaustion across 250+ production Windows servers.</p>
+      <div class="stack"><span class="pill">PowerShell 5.1</span><span class="pill">PowerShell Remoting</span><span class="pill">XML Config</span><span class="pill">HTML Reporting</span><span class="pill">Python</span></div>
+      <ul>
+        <li>Automated cleanup of temporary files, browser caches, logs and configured folders through centralized parallel orchestration.</li>
+        <li>Implemented per-server XML configuration and safety controls to avoid interference with live automation workloads.</li>
+        <li>Produced HTML audit reports and centralized logs, supported by a disk-analysis dashboard and stakeholder reporting utility.</li>
+      </ul>
+      <div class="impact"><b>Outcome:</b> Reduced disk-related production incidents by 95% and eliminated more than 80 hours of monthly manual IT effort.</div>
+    </article>
+
+    <article class="project" id="qwim">
+      <h3>QWIM — Queue Workload Item Manager <span class="small">· RPA Support Engineering</span></h3>
+      <p>Enterprise support utility connecting directly to Automation Anywhere Control Room APIs to retrieve, filter and safely bulk-delete stalled or failed queue work items.</p>
+      <div class="stack"><span class="pill">Python</span><span class="pill">Flask</span><span class="pill">Requests</span><span class="pill">HTML5</span><span class="pill">Bootstrap</span><span class="pill">PyWebView</span><span class="pill">PyInstaller</span></div>
+      <ul>
+        <li>Built secure authentication, queue schema discovery and high-volume work-item filtering.</li>
+        <li>Added multi-condition filtering and controlled bulk deletion for faster incident resolution.</li>
+        <li>Packaged the solution as both an enterprise web deployment and standalone Windows executable.</li>
+      </ul>
+      <div class="impact"><b>Outcome:</b> Replaced repetitive manual queue cleanup with faster, auditable support operations.</div>
+    </article>
+
+    <article class="project" id="monitor">
+      <h3>Monitor Bot <span class="small">· Failure Detection / Incident Automation</span></h3>
+      <p>Production monitoring solution that continuously scans Control Room executions, normalizes failures, detects duplicates and automatically creates ServiceNow incidents for unique failures.</p>
+      <div class="stack"><span class="pill">A360</span><span class="pill">C# CLR</span><span class="pill">SQL Server</span><span class="pill">Regex</span><span class="pill">SHA-256</span><span class="pill">ServiceNow REST API</span></div>
+      <ul>
+        <li>Built a 16-step regex normalization pipeline to reduce variable error messages to canonical forms.</li>
+        <li>Used deterministic SHA-256 hashing to suppress duplicate incidents.</li>
+        <li>Created incidents through ServiceNow REST APIs, stored full metadata in SQL and sent formatted HTML notifications.</li>
+        <li>Replaced fragile single-file checkpointing with a SQL-backed timestamp model for distributed, fault-tolerant execution.</li>
+      </ul>
+      <div class="impact"><b>Outcome:</b> Automated incident creation across 30+ configured automations and transformed manual triage into a coordinated incident lifecycle.</div>
+    </article>
+
+    <a class="back" href="#cover">Back to cover ↑</a>
+  </main>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section class="page" id="certifications">
+  <aside class="side">
+    <div class="brand">05 · Credentials</div>
+    <h2>Certifications &<br>Credentials</h2>
+    <div class="nav-title">Verified sources</div>
+    <div class="contact">Professional certifications spanning RPA, automation, Agile delivery and project leadership.</div>
+    <div class="nav-title">Primary vendors</div>
+    <span class="tag">Automation Anywhere</span><span class="tag">Skillsoft</span>
+    <div class="footer"><a href="#cover">↑ Back to cover</a></div>
+  </aside>
+  <main class="main">
+    <div class="eyebrow">05 · Certifications & Credentials</div>
+    <h2 class="section">Professional certifications</h2>
+    
+
+    <div class="grid2">
+      <div class="card">
+        <h3>Automation, RPA &amp; AI Credentials</h3>
+        <div class="cert"><strong>Automation Anywhere Certified Master RPA Professional — Version 11</strong> <a class="verify" href="https://certificates.automationanywhere.com/aebaa965-811d-42ca-8046-574e0fc6206d#acc.4fs751qZ" target="_blank" rel="noopener noreferrer">Verify ↗</a><span>Automation Anywhere · Issued Dec 2019 · Credential ID 14320390</span></div>
+        <div class="cert"><strong>Implementing Back Office Automation Using Automation Co-Pilot</strong> <a class="verify" href="https://ti-user-certificates.s3.amazonaws.com/17311944-b03d-468b-ada5-04276cdf6804/d27ae57d-b0c0-5411-a8ee-4b8cadb38b21-prashant-kumar-sethia-d6776469-acd6-4257-ae97-08d132059552-certificate.pdf" target="_blank" rel="noopener noreferrer">Verify ↗</a><span>Automation Anywhere · Issued Feb 2024</span></div>
+        <div class="cert"><strong>Pair Programming with a Large Language Model</strong> <a class="verify" href="https://learn.deeplearning.ai/accomplishments/47190ad7-9d1c-4be3-aeaf-37f9aa0c51d7" target="_blank" rel="noopener noreferrer">Verify ↗</a><span>DeepLearning.AI · Issued Mar 2025 · Credential ID 47190ad7-9d1c-4be3-aeaf-37f9aa0c51d7</span></div>
+        <div class="cert"><strong>ChatGPT Prompt Engineering for Developers</strong> <a class="verify" href="https://learn.deeplearning.ai/accomplishments/522d4d1f-0ad4-4727-8f70-e70fc6cbcbbd" target="_blank" rel="noopener noreferrer">Verify ↗</a><span>DeepLearning.AI · Issued Mar 2025 · Credential ID 522d4d1f-0ad4-4727-8f70-e70fc6cbcbbd</span></div>
+        <div class="cert"><strong>Reinvention with Agentic AI</strong> <a class="verify" href="https://www.credly.com/org/accenture/badge/reinvention-with-agentic-ai" target="_blank" rel="noopener noreferrer">Credly ↗</a><span>Accenture</span></div>
+        <div class="cert"><strong>Automation Anywhere Advanced Certification — A360</strong> <a class="verify" href="https://www.automationanywhere.com/certification" target="_blank" rel="noopener noreferrer">Automation Anywhere ↗</a><span>Automation Anywhere</span></div>
+      </div>
+
+      <div class="card">
+        <h3>Skillsoft — AI, GenAI &amp; Engineering</h3>
+        <div class="cert"><strong>Generative AI APIs for Practical Applications: An Introduction</strong> <a class="verify" href="https://skillsoft.digitalbadges.skillsoft.com/989ac546-a788-4227-b5c7-3c0a18d6af87" target="_blank" rel="noopener noreferrer">Verify ↗</a><span>Skillsoft · Course completion · Issued Aug 2024</span></div>
+        <div class="cert"><strong>Artificial Intelligence and Machine Learning</strong> <a class="verify" href="https://skillsoft.digitalbadges.skillsoft.com/e8f11f22-4848-47e9-832e-10c41d1b58ee" target="_blank" rel="noopener noreferrer">Verify ↗</a><span>Skillsoft · Course completion · Issued Aug 2024</span></div>
+        <div class="cert"><strong>ChatGPT Prompt Engineering Examples &amp; Use Cases</strong> <a class="verify" href="https://skillsoft.digitalbadges.skillsoft.com/3d9109f2-916c-45a6-a051-6ed3400d2e9e" target="_blank" rel="noopener noreferrer">Verify ↗</a><span>Skillsoft · Course completion · Issued Mar 2025</span></div>
+        <div class="cert"><strong>Responsible Use of AI</strong> <a class="verify" href="https://skillsoft.digitalbadges.skillsoft.com/23e1bedb-1ac9-43da-8269-2b7677d0b02e" target="_blank" rel="noopener noreferrer">Verify ↗</a><span>Skillsoft · Course completion · Issued Jun 2025</span></div>
+        <div class="cert"><strong>Leading Security Teams for GenAI Solutions: Use of Generative AI</strong> <a class="verify" href="https://skillsoft.digitalbadges.skillsoft.com/4ae6168b-8b99-4386-9f28-e89a44e2afc1" target="_blank" rel="noopener noreferrer">Verify ↗</a><span>Skillsoft · Course completion · Issued Jun 2025</span></div>
+        <div class="cert"><strong>Software Design and Development: Design Patterns &amp; SOLID Principles</strong> <a class="verify" href="https://skillsoft.digitalbadges.skillsoft.com/001c99af-bb22-43d4-bd2f-a83f26361a31" target="_blank" rel="noopener noreferrer">Verify ↗</a><span>Skillsoft · Course completion · Issued Mar 2025</span></div>
+      </div>
+
+      <div class="card">
+        <h3>Skillsoft — Agile &amp; Project Leadership</h3>
+        <div class="cert"><strong>Advanced Agile: Leadership Techniques</strong> <a class="verify" href="https://skillsoft.digitalbadges.skillsoft.com/33d875c1-1a27-4cc8-94c4-7a541a94ddc0" target="_blank" rel="noopener noreferrer">Verify ↗</a><span>Skillsoft · Course completion · Issued Mar 2025</span></div>
+        <div class="cert"><strong>Agile Principles and Methodologies</strong> <a class="verify" href="https://skillsoft.digitalbadges.skillsoft.com/13635463-7649-4566-ab4e-63327effdd19" target="_blank" rel="noopener noreferrer">Verify ↗</a><span>Skillsoft · Course completion · Issued Mar 2025</span></div>
+        <div class="cert"><strong>Agile Best Practices for Tech Leaders: Scrum Artifacts</strong> <a class="verify" href="https://skillsoft.digitalbadges.skillsoft.com/a535d2ef-1fa8-47b4-b010-f2bb0f4ccc12" target="_blank" rel="noopener noreferrer">Verify ↗</a><span>Skillsoft · Course completion · Issued Mar 2025</span></div>
+        <div class="cert"><strong>Agile Best Practices for Tech Leaders: Agile Frameworks</strong> <a class="verify" href="https://skillsoft.digitalbadges.skillsoft.com/1224d9ac-b3fe-4efc-9e1a-0357bd5ba985" target="_blank" rel="noopener noreferrer">Verify ↗</a><span>Skillsoft · Course completion · Issued Jun 2025</span></div>
+        <div class="cert"><strong>Agile Organizations: Building an Agile Culture</strong> <a class="verify" href="https://skillsoft.digitalbadges.skillsoft.com/678ce210-1d28-4b12-acfd-f3ab3c07e4e2" target="_blank" rel="noopener noreferrer">Verify ↗</a><span>Skillsoft · Course completion · Issued Jun 2025</span></div>
+        <div class="cert"><strong>CAPM®: Project Management Key Concepts</strong> <a class="verify" href="https://skillsoft.digitalbadges.skillsoft.com/99bdefef-30e4-4b03-bf71-8e3bf9ffcd72" target="_blank" rel="noopener noreferrer">Verify ↗</a><span>Skillsoft · Course completion · Issued Jun 2025</span></div>
+        <div class="cert"><strong>Managing a Project to Minimize Risk and Maximize Quality</strong> <a class="verify" href="https://skillsoft.digitalbadges.skillsoft.com/16b880a4-658d-48b4-b0dc-4af0c193f50b" target="_blank" rel="noopener noreferrer">Verify ↗</a><span>Skillsoft · Course completion · Issued Mar 2025</span></div>
+        <div class="cert"><strong>Communicating and Engaging Teams and Stakeholders</strong> <a class="verify" href="https://skillsoft.digitalbadges.skillsoft.com/ded7b952-ecc7-43b3-8669-50b26ab9b0b3" target="_blank" rel="noopener noreferrer">Verify ↗</a><span>Skillsoft · Course completion · Issued Mar 2025</span></div>
+        <div class="cert"><strong>Creating a Project Budget (PMBOK® Guide Sixth Edition)</strong> <a class="verify" href="https://skillsoft.digitalbadges.skillsoft.com/7d2bfb1a-1e31-4ca2-abcb-a6a3dcf60e6d" target="_blank" rel="noopener noreferrer">Verify ↗</a><span>Skillsoft · Course completion · Issued Mar 2025</span></div>
+      </div>
+
+      <div class="card">
+        <h3>Skillsoft — Cloud, Security &amp; Governance</h3>
+        <div class="cert"><strong>Hybrid Environment Pipelines: Hybrid Cloud Transformation</strong> <a class="verify" href="https://skillsoft.digitalbadges.skillsoft.com/e5bdcc9c-389e-434e-ae88-74475ba8b5c2" target="_blank" rel="noopener noreferrer">Verify ↗</a><span>Skillsoft · Course completion · Issued May 2025</span></div>
+        <div class="cert"><strong>CCSP 2022: Cloud Security Concepts &amp; Design Principles</strong> <a class="verify" href="https://skillsoft.digitalbadges.skillsoft.com/ae121b25-d929-4a30-a0c6-8b6a25c29003" target="_blank" rel="noopener noreferrer">Verify ↗</a><span>Skillsoft · Course completion · Issued Jun 2025</span></div>
+        <div class="cert"><strong>CCSP 2019: Identity &amp; Access Management</strong> <a class="verify" href="https://skillsoft.digitalbadges.skillsoft.com/0ab1d8fd-6ee3-439d-8d48-cbdf8aea5482" target="_blank" rel="noopener noreferrer">Verify ↗</a><span>Skillsoft · Course completion · Issued Jun 2025</span></div>
+        <div class="cert"><strong>CISM 2022: Social Engineering &amp; Malware</strong> <a class="verify" href="https://skillsoft.digitalbadges.skillsoft.com/93ce0701-a182-41f1-a1be-ce3efcbe2c63" target="_blank" rel="noopener noreferrer">Verify ↗</a><span>Skillsoft · Course completion · Issued Jun 2025</span></div>
+        <div class="cert"><strong>Systems Hardening</strong> <a class="verify" href="https://skillsoft.digitalbadges.skillsoft.com/35152d8c-300f-4e89-a8ec-6bc37ea29181" target="_blank" rel="noopener noreferrer">Verify ↗</a><span>Skillsoft · Course completion · Issued Jun 2025</span></div>
+        <div class="cert"><strong>Data Access &amp; Governance Policies: Data Classification, Encryption, &amp; Monitoring</strong> <a class="verify" href="https://skillsoft.digitalbadges.skillsoft.com/05e07364-6423-406c-b4b5-572f3425254d" target="_blank" rel="noopener noreferrer">Verify ↗</a><span>Skillsoft · Course completion · Issued Jun 2025</span></div>
+        <div class="cert"><strong>Using Business Etiquette to Increase Your Professionalism</strong> <a class="verify" href="https://skillsoft.digitalbadges.skillsoft.com/40fb71d9-e785-4b28-a3ec-d950bdcb2923" target="_blank" rel="noopener noreferrer">Verify ↗</a><span>Skillsoft · Course completion · Issued Jan 2025</span></div>
+      </div>
+    </div>
+
+    <div class="card soft" style="margin-top:16px">
+      <h3>Additional recognition</h3>
+      <p><b>Analyst of the Quarter</b> — eClerx Services Ltd. (listed in supplied LinkedIn profile/resume).</p>
+    </div>
+
+    <div class="rule"></div>
+    <h3>Certification positioning</h3>
+    <p class="section-intro">Certifications complement hands-on experience in RPA delivery, Agile practices and enterprise automation engineering.</p>
+    
+    <a class="back" href="#cover">Back to cover ↑</a>
+  </main>
+</section>
+
+<!-- EDUCATION -->
+<section class="page" id="education">
+  <aside class="side">
+    <div class="brand">06 · Education</div>
+    <h2>Education &<br>Background</h2>
+    <div class="nav-title">Navigate</div>
+    <nav>
+      <a href="#profile">01 · Profile</a>
+      <a href="#capabilities">02 · Capabilities</a>
+      <a href="#experience">03 · Career</a>
+      <a href="#projects">04 · Projects</a>
+      <a href="#certifications">05 · Certifications</a>
+      <a href="#education">06 · Education</a>
+    </nav>
+    <div class="nav-title">Languages</div>
+    <div class="contact">Hindi · Native/Bilingual<br>English · Professional Working<br>Marathi · Elementary</div>
+    <div class="footer"><a href="#cover">↑ Back to cover</a></div>
+  </aside>
+  <main class="main">
+    <div class="eyebrow">06 · Education & Background</div>
+    <h2 class="section">Academic foundation</h2>
+    <div class="education">
+      <div class="edu"><strong>GNIIT — Computer Science</strong><span>NIIT Ltd. · 2006–2009</span></div>
+      <div class="edu"><strong>A Level — Computer Science</strong><span>DOEACC Society · 2004–2005</span></div>
+      <div class="edu"><strong>B.Com — Commerce, Computer Science</strong><span>Shree Jain P.G. College, Bikaner · 2001–2004</span></div>
+      <div class="edu"><strong>12th — Accountancy, Business Organization, English & Economics</strong><span>Shri Jain Higher Secondary School, Bikaner · 1998–2001</span></div>
+    </div>
+
+    <div class="rule"></div>
+    <div class="grid2">
+      <div class="card">
+        <h3>Technical foundation</h3>
+        <p class="section-intro">Early career experience in accounting and .NET application development created a strong foundation in business processes, databases, software engineering and enterprise application delivery before the move into RPA.</p>
+      </div>
+      <div class="card">
+        <h3>Professional strengths</h3>
+        <ul>
+          <li>Analytical problem solving</li>
+          <li>Hands-on technical ownership</li>
+          <li>Cross-functional communication</li>
+          <li>Production troubleshooting</li>
+          <li>Process optimization</li>
+          <li>Knowledge sharing and mentoring</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="rule"></div>
+    <div class="card soft">
+      <h3>Career headline</h3>
+      <p><b>Software Engineer → RPA Developer → RPA Solution Architect → Senior RPA Consultant → Software Development Associate Manager</b></p>
+      <p class="small">This progression is the central story of the resume: a long software-engineering foundation evolving into enterprise automation architecture and engineering leadership.</p>
+    </div>
+
+    <p class="print-note">This HTML resume is designed for browser viewing and printing to PDF. Use the left navigation to jump between sections; internal links remain clickable in supported PDF exports.</p>
+    <a class="back" href="#cover">Back to cover ↑</a>
+  </main>
+</section>
+
+</body>
+</html>
