@@ -103,7 +103,7 @@ a:hover{color:var(--accent-dark);}
 /* Action buttons - floating FAB style */
 .fab-container{
   position:fixed;right:24px;top:50%;transform:translateY(-50%);z-index:950;
-  display:flex;flex-direction:column;gap:.5rem;
+  display:flex;flex-direction:column;gap:0;
 }
 .fab-main{
   width:52px;height:52px;border-radius:50%;border:0;cursor:pointer;
@@ -118,20 +118,17 @@ a:hover{color:var(--accent-dark);}
   padding:.5rem;box-shadow:0 8px 24px rgba(23,35,59,.15);
   opacity:0;visibility:hidden;transition:opacity .2s ease,visibility .2s ease,transform .2s ease;
   transform:translateY(-50%) translateX(10px);
-  display:flex;flex-direction:column;gap:.35rem;min-width:52px;pointer-events:none;
+  display:flex;flex-direction:column;gap:.35rem;min-width:52px;
+  pointer-events:none;
 }
-.fab-main:hover + .fab-panel,
-.fab-container:focus-within .fab-panel{
-  opacity:1;visibility:visible;transform:translateY(-50%) translateX(0);
-}
-.fab-container[aria-expanded="true"] .fab-panel{
+.fab-container:hover .fab-panel{
   opacity:1;visibility:visible;transform:translateY(-50%) translateX(0);pointer-events:auto;
 }
 .fab-action{
   display:grid;place-items:center;
   background:transparent;color:var(--ink);border:0;border-radius:8px;
   width:44px;height:44px;cursor:pointer;position:relative;
-  transition:background .15s ease;
+  transition:background .15s ease;z-index:10;
 }
 .fab-action:hover{background:var(--accent-soft);color:var(--accent);}
 .fab-action:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
@@ -1209,7 +1206,7 @@ a:hover{color:var(--accent-dark);}
         <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
       </svg>
     </button>
-    <div class="fab-panel" id="fabPanel" role="menu">
+    <div class="fab-panel" id="fabPanel" role="menu" aria-hidden="true">
       <button type="button" id="pdfBtn" class="fab-action" role="menuitem" title="Download PDF" aria-label="Download this resume as PDF">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
           <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
@@ -1355,32 +1352,21 @@ a:hover{color:var(--accent-dark);}
       if (mainEl && mainEl.focus) { mainEl.focus({ preventScroll: true }); }
     });
   }
-  /* Floating Action Button - toggle panel on mobile */
+  /* Floating Action Button - hover-based panel display (CSS handles show/hide) */
   var fabContainer = document.getElementById('fabContainer');
-  var fabMain = fabContainer ? fabContainer.querySelector('.fab-main') : null;
-  var fabPanel = fabContainer ? fabContainer.querySelector('.fab-panel') : null;
   var pdfBtn = document.getElementById('pdfBtn');
   var shareBtn = document.getElementById('shareBtn');
-  if (fabMain && fabPanel) {
-    fabMain.addEventListener('click', function () {
-      var expanded = fabMain.getAttribute('aria-expanded') === 'true';
-      fabMain.setAttribute('aria-expanded', expanded ? 'false' : 'true');
-      fabPanel.style.opacity = expanded ? '0' : '1';
-      fabPanel.style.visibility = expanded ? 'hidden' : 'visible';
-      fabPanel.style.transform = expanded ? 'translateY(-50%) translateX(10px)' : 'translateY(-50%) translateX(0)';
-    });
-  }
   /* Download PDF button handler */
   if (pdfBtn) {
-    pdfBtn.addEventListener('click', function () {
+    pdfBtn.addEventListener('click', function (e) {
+      e.stopPropagation();
       window.print();
-      /* Close FAB panel after action */
-      if (fabMain) fabMain.click();
     });
   }
   /* Share button handler - uses Web Share API with fallback */
   if (shareBtn) {
-    shareBtn.addEventListener('click', function () {
+    shareBtn.addEventListener('click', function (e) {
+      e.stopPropagation();
       var shareData = {
         title: 'Prashant Kumar Sethia — Senior RPA & Intelligent Automation Leader',
         text: 'Check out this executive resume of Prashant Kumar Sethia, a Senior RPA & Intelligent Automation Leader.',
@@ -1418,10 +1404,9 @@ a:hover{color:var(--accent-dark);}
           alert(msg);
         }
       }
-      /* Close FAB panel after action */
-      if (fabMain) fabMain.click();
     });
   }
+  
   syncHeaderHeight();
   runSpy();
 })();
