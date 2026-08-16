@@ -123,24 +123,33 @@ a:hover{color:var(--accent-dark);}
   padding:.5rem;box-shadow:0 8px 24px rgba(23,35,59,.15);
   opacity:0;visibility:hidden;transition:opacity .2s ease,visibility .2s ease,transform .2s ease;
   transform:translateY(-50%) translateX(10px);
-  display:flex;flex-direction:column;gap:.35rem;min-width:140px;
+  display:flex;flex-direction:column;gap:.35rem;min-width:52px;pointer-events:none;
 }
-.fab-container:hover .fab-panel,
+.fab-main:hover + .fab-panel,
 .fab-container:focus-within .fab-panel{
   opacity:1;visibility:visible;transform:translateY(-50%) translateX(0);
 }
 .fab-container[aria-expanded="true"] .fab-panel{
-  opacity:1;visibility:visible;transform:translateY(-50%) translateX(0);
+  opacity:1;visibility:visible;transform:translateY(-50%) translateX(0);pointer-events:auto;
 }
 .fab-action{
-  display:flex;align-items:center;gap:.6rem;
+  display:grid;place-items:center;
   background:transparent;color:var(--ink);border:0;border-radius:8px;
-  padding:.55rem .7rem;font-size:.85rem;cursor:pointer;text-align:left;
+  width:44px;height:44px;cursor:pointer;position:relative;
   transition:background .15s ease;
 }
 .fab-action:hover{background:var(--accent-soft);color:var(--accent);}
 .fab-action:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
-.fab-action svg{flex:none;width:18px;height:18px;}
+.fab-action svg{flex:none;width:20px;height:20px;}
+.fab-action::after{
+  content:attr(title);
+  position:absolute;right:52px;top:50%;transform:translateY(-50%);
+  background:var(--ink);color:#fff;padding:.35rem .6rem;border-radius:6px;
+  font-size:.75rem;white-space:nowrap;opacity:0;visibility:hidden;
+  transition:opacity .15s ease,visibility .15s ease;
+  pointer-events:none;z-index:1000;
+}
+.fab-action:hover::after{opacity:1;visibility:visible;}
 @media print{
   .fab-container{display:none !important;}
 }
@@ -152,6 +161,7 @@ a:hover{color:var(--accent-dark);}
   overflow-y:auto;overscroll-behavior:contain;
   background:var(--surface);border-right:1px solid var(--line);
   padding:1.1rem .9rem 2.5rem;
+  scroll-behavior:smooth;
 }
 .nav-title{
   margin:.2rem .55rem .8rem;font-size:.68rem;font-weight:700;
@@ -1280,15 +1290,14 @@ a:hover{color:var(--accent-dark);}
       </svg>
     </button>
     <div class="fab-panel" id="fabPanel" role="menu">
-      <button type="button" id="pdfBtn" class="fab-action" role="menuitem" title="Download this resume as PDF" aria-label="Download this resume as PDF">
+      <button type="button" id="pdfBtn" class="fab-action" role="menuitem" title="Download PDF" aria-label="Download this resume as PDF">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
           <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
           <polyline points="7 10 12 15 17 10"></polyline>
           <line x1="12" y1="15" x2="12" y2="3"></line>
         </svg>
-        <span>Download PDF</span>
       </button>
-      <button type="button" id="shareBtn" class="fab-action" role="menuitem" title="Share this resume" aria-label="Share this resume on social media">
+      <button type="button" id="shareBtn" class="fab-action" role="menuitem" title="Share" aria-label="Share this resume on social media">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
           <circle cx="18" cy="5" r="3"></circle>
           <circle cx="6" cy="12" r="3"></circle>
@@ -1296,7 +1305,6 @@ a:hover{color:var(--accent-dark);}
           <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
           <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
         </svg>
-        <span>Share</span>
       </button>
     </div>
   </div>
@@ -1402,6 +1410,15 @@ a:hover{color:var(--accent-dark);}
         link.removeAttribute('aria-current');
       }
     });
+    // Auto-scroll the nav pane to keep active link visible
+    var activeLink = document.querySelector('.nav-link.active');
+    if (activeLink && nav) {
+      var navRect = nav.getBoundingClientRect();
+      var linkRect = activeLink.getBoundingClientRect();
+      if (linkRect.top < navRect.top || linkRect.bottom > navRect.bottom) {
+        activeLink.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+      }
+    }
   }
 
   var ticking = false;
