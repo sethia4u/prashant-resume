@@ -105,16 +105,23 @@ a:hover{color:var(--accent-dark);}
 .nav-toggle:hover{background:rgba(255,255,255,.16);}
 .nav-toggle:focus-visible{outline:2px solid #9db6ff;outline-offset:2px;}
 
-/* Download PDF button */
-.pdf-btn{
-  margin-left:auto;flex:none;display:flex;align-items:center;gap:.45rem;
-  background:var(--accent);color:#fff;border:0;border-radius:8px;
-  padding:.45rem .7rem;font-size:.78rem;font-weight:600;cursor:pointer;
+/* Download PDF button - moved to footer, old header styles removed */
+
+/* Action buttons in footer */
+.action-buttons{
+  display:flex;flex-wrap:wrap;gap:.6rem;margin-top:.75rem;
 }
-.pdf-btn:hover{background:var(--accent-dark);}
-.pdf-btn:focus-visible{outline:2px solid #fff;outline-offset:2px;}
+.action-btn{
+  display:flex;align-items:center;gap:.45rem;
+  background:var(--accent);color:#fff;border:0;border-radius:8px;
+  padding:.5rem .85rem;font-size:.82rem;font-weight:600;cursor:pointer;
+}
+.action-btn:hover{background:var(--accent-dark);}
+.action-btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+.share-btn{background:var(--accent-2);}
+.share-btn:hover{background:#0a5c4d;}
 @media print{
-  .pdf-btn{display:none !important;}
+  .pdf-btn,.share-btn,.action-buttons{display:none !important;}
 }
 
 /* ============================ Fixed left navigation ============================ */
@@ -316,9 +323,10 @@ a:hover{color:var(--accent-dark);}
   body{font-size:14.5px;}
   .header-inner{gap:.4rem 1rem;padding:.7rem 1rem;}
   .header-contact{flex-basis:100%;}
-  .pdf-btn{margin-left:0;order:2;width:100%;justify-content:center;}
   .job-head{flex-direction:column;align-items:flex-start;}
   .card{padding:1rem 1.05rem;}
+  .action-buttons{justify-content:center;}
+  .action-btn{flex:1 1 auto;min-width:140px;justify-content:center;}
 }
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto;}
@@ -378,7 +386,6 @@ a:hover{color:var(--accent-dark);}
       <ul class="contact-list">
         <li>Mumbai / Thane, Maharashtra, India</li>
         <li><a href="mailto:sethia.prashant@gmail.com">sethia.prashant@gmail.com</a></li>
-        <li><a href="tel:+919320213421">+91 9320213421</a></li>
         <li><a href="https://www.linkedin.com/in/prashantksethia" target="_blank" rel="noopener">linkedin.com/in/prashantksethia</a></li>
       </ul>
       <ul class="focus-tags" aria-label="Focus areas">
@@ -391,15 +398,6 @@ a:hover{color:var(--accent-dark);}
         <li>AI / GenAI</li>
       </ul>
     </div>
-
-    <button type="button" id="pdfBtn" class="pdf-btn" title="Download this resume as PDF" aria-label="Download this resume as PDF">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
-        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-        <polyline points="7 10 12 15 17 10"></polyline>
-        <line x1="12" y1="15" x2="12" y2="3"></line>
-      </svg>
-      <span>Download PDF</span>
-    </button>
   </div>
 </header>
 
@@ -1246,6 +1244,29 @@ a:hover{color:var(--accent-dark);}
   <footer class="page-footer">
     <p>This HTML resume is designed for browser viewing and printing to PDF. Use the left navigation to jump between sections; internal links remain clickable in supported PDF exports.</p>
     <p><a class="back-top" href="#top">↑ Back to top</a></p>
+    
+    <!-- Action buttons: Download PDF and Share -->
+    <div class="action-buttons">
+      <button type="button" id="pdfBtn" class="action-btn pdf-btn" title="Download this resume as PDF" aria-label="Download this resume as PDF">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+          <polyline points="7 10 12 15 17 10"></polyline>
+          <line x1="12" y1="15" x2="12" y2="3"></line>
+        </svg>
+        <span>Download PDF</span>
+      </button>
+      
+      <button type="button" id="shareBtn" class="action-btn share-btn" title="Share this resume" aria-label="Share this resume on social media">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+          <circle cx="18" cy="5" r="3"></circle>
+          <circle cx="6" cy="12" r="3"></circle>
+          <circle cx="18" cy="19" r="3"></circle>
+          <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+          <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+        </svg>
+        <span>Share</span>
+      </button>
+    </div>
   </footer>
 
 </main>
@@ -1385,6 +1406,51 @@ a:hover{color:var(--accent-dark);}
   if (pdfBtn) {
     pdfBtn.addEventListener('click', function () {
       window.print();
+    });
+  }
+
+  /* Share button handler - uses Web Share API with fallback */
+  var shareBtn = document.getElementById('shareBtn');
+  if (shareBtn) {
+    shareBtn.addEventListener('click', function () {
+      var shareData = {
+        title: 'Prashant Kumar Sethia — Senior RPA & Intelligent Automation Leader',
+        text: 'Check out this executive resume of Prashant Kumar Sethia, a Senior RPA & Intelligent Automation Leader.',
+        url: window.location.href
+      };
+
+      if (navigator.share) {
+        navigator.share(shareData).catch(function (err) {
+          /* User cancelled or share failed silently */
+        });
+      } else {
+        /* Fallback: copy URL to clipboard */
+        if (navigator.clipboard) {
+          navigator.clipboard.writeText(window.location.href).then(function () {
+            var originalText = shareBtn.innerHTML;
+            shareBtn.innerHTML = '<span>Copied!</span>';
+            setTimeout(function () {
+              shareBtn.innerHTML = originalText;
+            }, 2000);
+          }).catch(function () {
+            /* Clipboard failed, open share dialog alternatives */
+            var shareUrl = encodeURIComponent(window.location.href);
+            var twitterUrl = 'https://twitter.com/intent/tweet?url=' + shareUrl;
+            var linkedinUrl = 'https://www.linkedin.com/sharing/share-offsite/?url=' + shareUrl;
+            var facebookUrl = 'https://www.facebook.com/sharer/sharer.php?u=' + shareUrl;
+            var msg = 'Share via:\\n\\nTwitter: ' + twitterUrl + '\\nLinkedIn: ' + linkedinUrl + '\\nFacebook: ' + facebookUrl;
+            alert(msg);
+          });
+        } else {
+          /* Last resort: show URLs */
+          var shareUrl = encodeURIComponent(window.location.href);
+          var twitterUrl = 'https://twitter.com/intent/tweet?url=' + shareUrl;
+          var linkedinUrl = 'https://www.linkedin.com/sharing/share-offsite/?url=' + shareUrl;
+          var facebookUrl = 'https://www.facebook.com/sharer/sharer.php?u=' + shareUrl;
+          var msg = 'Copy this URL: ' + window.location.href + '\\n\\nOr share via:\\n\\nTwitter: ' + twitterUrl + '\\nLinkedIn: ' + linkedinUrl + '\\nFacebook: ' + facebookUrl;
+          alert(msg);
+        }
+      }
     });
   }
 
