@@ -72,12 +72,13 @@ a:hover{color:var(--accent-dark);}
 .header-role{margin:.18rem 0 0;font-size:.88rem;color:#c9d6f5;}
 .header-contact{
   flex:1 1 340px;min-width:0;
-  display:flex;flex-direction:column;gap:.35rem;align-items:flex-start;
+  display:flex;flex-direction:column;gap:.35rem;align-items:flex-end;
 }
 .contact-list{
   list-style:none;margin:0;padding:0;
   display:flex;flex-wrap:wrap;gap:.2rem 1.15rem;
   font-size:.8rem;color:#dbe4f8;
+  justify-content: flex-end; /* Right align */
 }
 .contact-list li{display:flex;align-items:center;gap:.4rem;}
 .contact-list li::before{
@@ -94,7 +95,7 @@ a:hover{color:var(--accent-dark);}
 .contact-icon{width:18px;height:18px;}
 .contact-list a{text-decoration:none;border-bottom:0;}
 .contact-list a:hover{color:#bcd0ff;border-bottom-color:transparent;}
-.focus-tags{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.3rem;}
+.focus-tags{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.3rem;justify-content: flex-end;}
 .focus-tags li{
   font-size:.64rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
   padding:.18rem .55rem;border-radius:999px;
