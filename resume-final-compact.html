@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prashant Sethia - Compact Resume</title>
+    <style>
+        :root {
+            --text-main: #1a1a1a;
+            --text-muted: #555;
+            --border-color: #ddd;
+            --bg-light: #f9f9f9;
+            --accent: #2c3e50;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-main);
+            line-height: 1.35;
+            font-size: 9.5pt;
+            background: #fff;
+        }
+        .container { max-width: 210mm; margin: 0 auto; padding: 3mm; }
+        
+        /* Header */
+        header { text-align: center; margin-bottom: 8px; border-bottom: 2px solid var(--accent); padding-bottom: 6px; }
+        h1 { font-size: 18pt; color: var(--accent); margin-bottom: 2px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .role { font-size: 10.5pt; color: var(--text-muted); font-weight: 600; margin-bottom: 4px; }
+        .contact-row { display: flex; justify-content: center; gap: 12px; font-size: 9pt; flex-wrap: wrap; }
+        .contact-item { display: flex; align-items: center; gap: 4px; color: var(--text-main); text-decoration: none; }
+        .contact-item:hover { text-decoration: underline; }
+        .icon-sm { width: 14px; height: 14px; fill: var(--text-muted); }
+
+        /* Sections */
+        section { margin-bottom: 10px; }
+        h2 { font-size: 11pt; color: var(--accent); border-bottom: 1px solid var(--border-color); padding-bottom: 3px; margin-bottom: 6px; text-transform: uppercase; }
+        
+        /* Grid Layouts */
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+        .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
+        
+        /* What I Bring & Career Evolution */
+        .info-block { background: var(--bg-light); padding: 6px; border-radius: 4px; border: 1px solid #eee; }
+        .info-block ul { list-style: none; }
+        .info-block li { margin-bottom: 3px; position: relative; padding-left: 10px; font-size: 9pt; }
+        .info-block li::before { content: "•"; position: absolute; left: 0; color: var(--accent); }
+        .career-item { margin-bottom: 6px; }
+        .career-title { font-weight: 700; font-size: 9.5pt; color: var(--text-main); }
+        .career-desc { font-size: 8.5pt; color: var(--text-muted); margin-top: 2px; }
+
+        /* Core Capabilities */
+        .cap-item { background: #fff; border: 1px solid var(--border-color); padding: 4px; text-align: center; border-radius: 3px; }
+        .cap-title { font-weight: 700; font-size: 9pt; color: var(--accent); display: block; margin-bottom: 2px; }
+        .cap-desc { font-size: 7.5pt; color: var(--text-muted); line-height: 1.2; }
+
+        /* Architecture Patterns */
+        .arch-item { background: var(--bg-light); padding: 4px; border-radius: 3px; border-left: 3px solid var(--accent); }
+        .arch-title { font-weight: 700; font-size: 9pt; color: var(--text-main); display: block; }
+        .arch-tech { font-size: 7.5pt; color: var(--text-muted); font-family: monospace; }
+
+        /* Professional Experience */
+        .exp-item { background: #fff; border: 1px solid #eee; padding: 6px; border-radius: 4px; }
+        .exp-header { font-weight: 700; font-size: 9.5pt; color: var(--accent); margin-bottom: 3px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .exp-desc { font-size: 8.5pt; color: var(--text-main); line-height: 1.3; }
+        .exp-desc strong { color: #000; }
+
+        /* Projects */
+        .theme-bar { grid-column: 1 / -1; background: var(--accent); color: #fff; padding: 4px 6px; font-size: 8.5pt; font-weight: 600; border-radius: 3px; text-align: center; margin-bottom: 4px; }
+        .proj-item { background: #fff; border: 1px solid #eee; padding: 6px; border-radius: 4px; display: flex; flex-direction: column; }
+        .proj-title { font-weight: 700; font-size: 9.5pt; color: var(--text-main); margin-bottom: 2px; }
+        .proj-summary { font-size: 8.5pt; color: var(--text-muted); margin-bottom: 3px; font-style: italic; }
+        .proj-tech { font-size: 8pt; color: var(--accent); font-weight: 600; margin-bottom: 3px; }
+        .proj-details { font-size: 8.5pt; color: var(--text-main); line-height: 1.3; }
+
+        /* Certifications */
+        .cert-list { list-style: none; text-align: center; }
+        .cert-list li { margin-bottom: 4px; font-size: 9.5pt; }
+        .cert-link { color: var(--accent); text-decoration: none; font-weight: 600; font-size: 9pt; display: inline-block; margin-top: 4px; }
+        .cert-link:hover { text-decoration: underline; }
+
+        @media print {
+            body { font-size: 9pt; }
+            .container { width: 100%; max-width: none; padding: 0; margin: 0; }
+            section { break-inside: avoid; }
+            .grid-2, .grid-4 { gap: 4px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Prashant Sethia</h1>
+            <div class="role">RPA Architect | Intelligent Automation Leader | AI-Driven Process Innovation</div>
+            <div class="contact-row">
+                <a href="mailto:prashant.sethia@example.com" class="contact-item">
+                    <svg class="icon-sm" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                    <span>prashant.sethia@example.com</span>
+                </a>
+                <a href="https://linkedin.com/in/prashantsethia" target="_blank" class="contact-item">
+                    <svg class="icon-sm" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+                    <span>linkedin.com/in/prashantsethia</span>
+                </a>
+                <span class="contact-item">
+                    <svg class="icon-sm" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                    <span>Mumbai, India</span>
+                </span>
+            </div>
+        </header>
+
+        <section class="grid-2">
+            <div class="info-block">
+                <h2>What I Bring</h2>
+                <ul>
+                    <li><strong>End-to-End RPA Leadership:</strong> From opportunity assessment to production support.</li>
+                    <li><strong>Advanced Automation:</strong> Complex workflows, IDP, API integrations, and attended bots.</li>
+                    <li><strong>Operational Excellence:</strong> Control Room architecture, monitoring, and reliability engineering.</li>
+                    <li><strong>Innovation:</strong> Integrating GenAI and LLMs into traditional automation stacks.</li>
+                </ul>
+            </div>
+            <div class="info-block">
+                <h2>Career Evolution</h2>
+                <div class="career-item">
+                    <div class="career-title">Associate Manager, RPA — Accenture (Aug 2024 – Present)</div>
+                    <div class="career-desc">Leading enterprise automation initiatives, solution architecture, and delivery excellence.</div>
+                </div>
+                <div class="career-item">
+                    <div class="career-title">Senior Engineer — Atos Syntel (Jun 2018 – Aug 2024)</div>
+                    <div class="career-desc">Specialized in complex bot development, infrastructure setup, and production support.</div>
+                </div>
+                <div class="career-item">
+                    <div class="career-title">System Engineer — Tata Consultancy Services (Oct 2013 – Jun 2018)</div>
+                    <div class="career-desc">Foundation in software development, testing, and process automation.</div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Core Capabilities</h2>
+            <div class="grid-4">
+                <div class="cap-item"><span class="cap-title">RPA Platforms</span><span class="cap-desc">AA A360, V11, Power Automate</span></div>
+                <div class="cap-item"><span class="cap-title">Languages</span><span class="cap-desc">Python, C#, SQL, PowerShell</span></div>
+                <div class="cap-item"><span class="cap-title">IDP & OCR</span><span class="cap-desc">Kofax, Abbyy, Google Vision</span></div>
+                <div class="cap-item"><span class="cap-title">Orchestration</span><span class="cap-desc">WLM, Queues, Schedulers</span></div>
+                <div class="cap-item"><span class="cap-title">APIs & Web</span><span class="cap-desc">REST/SOAP, JSON, XML</span></div>
+                <div class="cap-item"><span class="cap-title">Databases</span><span class="cap-desc">SQL Server, Oracle, MySQL</span></div>
+                <div class="cap-item"><span class="cap-title">Tools</span><span class="cap-desc">Git, ServiceNow, Jira, CI/CD</span></div>
+                <div class="cap-item"><span class="cap-title">GenAI</span><span class="cap-desc">LLM Integration, Prompts</span></div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Architecture Patterns</h2>
+            <div class="grid-4">
+                <div class="arch-item"><span class="arch-title">Orchestration</span><span class="arch-tech">A360 Control Room · WLM · Runners</span></div>
+                <div class="arch-item"><span class="arch-title">Engineering</span><span class="arch-tech">Python · REST APIs · C# CLR · Config</span></div>
+                <div class="arch-item"><span class="arch-title">Data Layer</span><span class="arch-tech">SQL Server · Manifests · Audit Logs</span></div>
+                <div class="arch-item"><span class="arch-title">Visibility</span><span class="arch-tech">Power BI · HTML Reports · Alerts</span></div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Professional Experience</h2>
+            <div class="grid-2">
+                <div class="exp-item">
+                    <div class="exp-header">Accenture (Aug 2024 – Present) - Software Development Associate Manager — RPA</div>
+                    <div class="exp-desc">Leads enterprise RPA engineering and delivery. Focuses on solution design, production-grade automation, intelligent document processing, integrations, and operational improvements. Works across business requirements, architecture, development, deployment, and support.</div>
+                </div>
+                <div class="exp-item">
+                    <div class="exp-header">Atos Syntel (Jun 2018 – Aug 2024) - Senior Engineer — RPA</div>
+                    <div class="exp-desc">Contributed to enterprise RPA delivery with focus on complex bot development, infrastructure setup, and production support. Specialized in Automation Anywhere, Python scripting, SQL integrations, and troubleshooting critical production issues.</div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Selected Project Portfolio</h2>
+            <div class="theme-bar">Theme: Production RPA · APIs · Python · SQL · Observability · Automation Reliability</div>
+            <div class="grid-2">
+                <div class="proj-item">
+                    <div class="proj-title">India Customs Clearance Automation</div>
+                    <div class="proj-summary">Production-grade automation for customs declaration entry for inbound air shipments across India gateways.</div>
+                    <div class="proj-tech">Tech: A360, WLM, Kofax OCR, REST API, Fuzzy Matching</div>
+                    <div class="proj-details">Batch workload distribution across four parallel bot runners, Kofax OCR integration for invoice extraction, custom SQL logic for fuzzy customer-profile validation, automated government ACCS portal submission via REST APIs, centralized SQL manifest tracking, daily reporting and cloud-based log archival. Outcome: Improved turnaround time and reduced manual effort.</div>
+                </div>
+                <div class="proj-item">
+                    <div class="proj-title">Global Vendor Onboarding System</div>
+                    <div class="proj-summary">Intelligent Document Processing pipeline for global vendor registration and compliance validation.</div>
+                    <div class="proj-tech">Tech: A360, Abbyy FineReader, SharePoint, Email Bot</div>
+                    <div class="proj-details">Automated extraction of vendor details from diverse document formats, validation against internal compliance databases, automatic creation of vendor records in ERP, email notifications for exceptions, SharePoint folder organization. Outcome: Reduced onboarding time from 5 days to 4 hours.</div>
+                </div>
+                <div class="proj-item">
+                    <div class="proj-title">Finance Reconciliation Bot</div>
+                    <div class="proj-summary">High-volume transaction reconciliation between bank statements and internal ledger systems.</div>
+                    <div class="proj-tech">Tech: A360, Advanced Excel, SQL, Outlook</div>
+                    <div class="proj-details">Downloaded bank statements from multiple portals, parsed PDF/Excel data, performed multi-currency reconciliation using custom algorithms, flagged discrepancies for review, generated daily variance reports. Outcome: 99.8% accuracy and elimination of manual errors.</div>
+                </div>
+                <div class="proj-item">
+                    <div class="proj-title">HR Employee Lifecycle Management</div>
+                    <div class="proj-summary">End-to-end automation of employee onboarding, transfers, and exit processes.</div>
+                    <div class="proj-tech">Tech: A360, ServiceNow, Active Directory, Teams</div>
+                    <div class="proj-details">Triggered workflows from ServiceNow tickets, provisioned/deprovisioned user accounts in AD, created email accounts, assigned licenses, sent welcome kits via Teams, updated asset registers. Outcome: Zero-day provisioning and consistent compliance adherence.</div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Certifications & Credentials</h2>
+            <ul class="cert-list">
+                <li><strong>Automation Anywhere Certified Master RPA Professional</strong> — Version 11</li>
+                <li><strong>ChatGPT Prompt Engineering for Developers</strong> — DeepLearning.AI</li>
+            </ul>
+            <div style="text-align: center;">
+                <a href="https://resume.prashantsethia.com/#certifications" class="cert-link" target="_blank">View Full List of Certifications & Courses →</a>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
