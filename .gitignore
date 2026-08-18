@@ -1,1 +1,3 @@
-Nothing needs to be added to .gitignore since only a single HTML file (`resume-compact.html`) was modified, which is a source file that should not be ignored.
+```
+*.html
+```
